@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model LegendOfFall.Models.Applicant
+
+<script src="~/Scripts/ckeditor/ckeditor.js"></script>
+
+<h1>რედაქტირება</h1>
+
+@using (Html.BeginForm("Edit", "Applicant", FormMethod.Post))
+{
+    <input style="display:none" value="@Model.Id" />
+    <div>
+        @Html.LabelFor(x => x.FirstName) @Html.EditorFor(x => x.FirstName)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.LastName)  @Html.EditorFor(x => x.LastName)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Bio)  @Html.TextAreaFor(x=>x.Bio, new {@class="ckeditor",  value = Model.Bio })
+    </div>
+    <div>
+        @Html.LabelFor(x=>x.PhoneNumber) @Html.EditorFor(x=>x.PhoneNumber)
+    </div>
+    <div>
+        <input type="submit" value="შენახვა" />
+    </div>
+}
+
+
+

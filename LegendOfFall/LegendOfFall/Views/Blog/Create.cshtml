@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<script src="~/Scripts/ckeditor/ckeditor.js"></script>
+@model LegendOfFall.Models.BlogPost
+
+<h2>Create Blog</h2>
+
+@using (Html.BeginForm("Create", "Blog", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>სათაური: @Html.TextBoxFor(x => x.Title)</div>
+    <div>
+        ტანი @Html.TextAreaFor(x => x.Body, new { @class = "ckeditor" })
+    </div>
+    <input type="file" name="photo" multiple />
+    <div>
+        <input type="submit" value="შენახვა" />
+    </div>
+}
+

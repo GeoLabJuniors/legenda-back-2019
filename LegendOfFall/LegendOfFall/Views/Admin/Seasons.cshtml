@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Seasons";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model  IEnumerable<LegendOfFall.Models.Season>
+
+
+<h1>სეზონები</h1>
+<div class="foo">
+    <a class="btn"  href="@Url.Action("Create","Season")">სეზონის დამატება</a>
+</div>
+
+<div id="seasons">
+
+    @foreach(var item in Model)
+    {
+    <div class="content-wrapper">
+        <span style="display:none">@item.Id</span>
+        <p><strong>სახელი:</strong> @item.Title</p>
+        <p><strong>ჩატარების წელი:</strong> @item.Year</p>
+        <p><strong>აღწერა:</strong> @Html.Raw(item.Description)</p>
+        <p><strong>დამატების თარიღი:</strong> @item.DateCreated</p>
+        <a class="btn btn-edit" href="@Url.Action("Edit","Season", new { Id = item.Id })">რედაქტირება</a>
+        <a class="btn btn-del" href="@Url.Action("Delete","Season", new { Id = item.Id })">წაშლა</a>
+        <a class="btn btn-details" href="@Url.Action("Delete","Season", new { Id = item.Id })">დეტალები</a>
+    </div>
+    }
+
+</div>
+

@@ -1,0 +1,25 @@
+﻿#seasons .season-wrapper{
+    background-color:#fff;
+    margin-top:30px;
+    padding:15px;
+}
+
+.foo a{
+    padding:10px;
+    background-color:seagreen;
+    color:#fff;
+    text-decoration:none;
+}
+
+#seasons .season-wrapper a{
+    padding:10px;
+    background-color:seagreen;
+    color:#fff;
+    text-decoration:none;
+    margin-top:15px;
+    display:inline-block;
+}
+
+#seasons .season-wrapper a.del{
+    background-color:tomato;
+}

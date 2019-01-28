@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model LegendOfFall.Models.Applicant
+
+<link href="~/Content/assets/css/applicant-inner.css" rel="stylesheet" />
+
+<div class="applicant-wrapper">
+    <img src="~/Content/assets/img/face.jpg" />
+    <p><strong>სახელი:</strong> @Model.FirstName</p>
+    <p>გვარი: @Model.LastName</p>
+    <p>სეზონი: @Model.Season_Applicant.FirstOrDefault().Season.Year</p>
+    <p>ელფოსტა: @Model.Email </p>
+    <p>ტელეფონის ნომერი: @Model.PhoneNumber </p>
+    <label for="is-finalist"> ფინალისტი </label>
+    <input id="is-finalist" type="checkbox" />
+    <p>ბიოგრაფია: @Html.Raw(Model.Bio)</p>
+
+
+</div>
+

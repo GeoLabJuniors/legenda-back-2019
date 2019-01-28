@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model LegendOfFall.Models.Contact
+
+<h1>საკონტაქტო ინფორმაცია</h1>
+
+<div class="content-wrapper">
+    <div>
+        <p><strong>მისამართი - </strong>@Model.Address</p>
+    </div>
+    <div>
+        <p><strong>ტელეფონი : </strong>@Model.Phone</p>
+    </div>
+    <div>
+        <p><strong>ტელეფონი 2 : </strong>@Model.Phone2</p>
+    </div>
+    <div>
+        <p><strong>ელფოსტა : </strong>@Model.Email</p>
+    </div>
+    <div>
+        <p><strong>ელფოსტა 2 : </strong>@Model.Email2</p>
+    </div>
+    <div>
+        <a class="btn btn-edit" href="@Url.Action("Edit","Contact")">რედაქტირება</a>
+    </div> 
+</div>
+

@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model LegendOfFall.Models.BlogPost
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "Blog", FormMethod.Post))
+{
+    <div>
+        სათაური @Html.EditorFor(x => x.Title)
+    </div>
+
+    <div>
+        ტანი @Html.TextAreaFor(x => x.Body, new { @class = "ckeditor" });
+    </div>
+
+    <input type="submit" value="რედაქტირება" />
+}
+

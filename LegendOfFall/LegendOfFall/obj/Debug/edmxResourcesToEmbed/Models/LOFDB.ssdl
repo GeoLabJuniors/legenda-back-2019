@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LOFModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AboutUs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="AboutUsDescription" Type="ntext" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Applicant">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Bio" Type="ntext" />
+    <Property Name="DateJoined" Type="date" Nullable="false" />
+    <Property Name="BirthDate" Type="date" Nullable="false" />
+    <Property Name="University" Type="nvarchar" MaxLength="50" />
+    <Property Name="Faculty" Type="nvarchar" MaxLength="50" />
+    <Property Name="How" Type="ntext" Nullable="false" />
+    <Property Name="Why" Type="ntext" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="400" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsFinalist" Type="bit" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Application">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NovelTitle" Type="nvarchar" MaxLength="400" Nullable="false" />
+    <Property Name="DocumentPath" Type="nvarchar" MaxLength="400" Nullable="false" />
+    <Property Name="SeasonId" Type="int" Nullable="false" />
+    <Property Name="DateApplied" Type="date" Nullable="false" />
+    <Property Name="ApplicantId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BlogPost">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicantId" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="400" Nullable="false" />
+    <Property Name="Body" Type="ntext" Nullable="false" />
+    <Property Name="DateCreated" Type="date" Nullable="false" />
+    <Property Name="AuthorName" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsApproved" Type="bit" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Address" Type="nvarchar" MaxLength="400" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Judge">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Bio" Type="ntext" />
+    <Property Name="Email" Type="nvarchar" MaxLength="400" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Photo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicantId" Type="int" />
+    <Property Name="SeasonId" Type="int" />
+    <Property Name="BlogPostId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="400" Nullable="false" />
+    <Property Name="Extension" Type="nvarchar" MaxLength="400" Nullable="false" />
+    <Property Name="Path" Type="nvarchar" MaxLength="400" Nullable="false" />
+    <Property Name="DisplayOnMain" Type="bit" />
+  </EntityType>
+  <EntityType Name="Season">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Year" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="ntext" Nullable="false" />
+    <Property Name="DateCreated" Type="date" />
+  </EntityType>
+  <EntityType Name="Season_Applicant">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SeasonId" Type="int" Nullable="false" />
+    <Property Name="ApplicantId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Season_Judge">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JudgeId" Type="int" Nullable="false" />
+    <Property Name="SeasonId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Winners">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SeasonId" Type="int" Nullable="false" />
+    <Property Name="ApplicantId" Type="int" Nullable="false" />
+    <Property Name="PlaceTook" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Application_Applicant">
+    <End Role="Applicant" Type="Self.Applicant" Multiplicity="1" />
+    <End Role="Application" Type="Self.Application" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Application">
+        <PropertyRef Name="ApplicantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BlogPost_Applicant">
+    <End Role="Applicant" Type="Self.Applicant" Multiplicity="0..1" />
+    <End Role="BlogPost" Type="Self.BlogPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BlogPost">
+        <PropertyRef Name="ApplicantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Photo_Applicant">
+    <End Role="Applicant" Type="Self.Applicant" Multiplicity="0..1" />
+    <End Role="Photo" Type="Self.Photo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Photo">
+        <PropertyRef Name="ApplicantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Photo_BlogPost">
+    <End Role="BlogPost" Type="Self.BlogPost" Multiplicity="0..1" />
+    <End Role="Photo" Type="Self.Photo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BlogPost">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Photo">
+        <PropertyRef Name="BlogPostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Photo_Season">
+    <End Role="Season" Type="Self.Season" Multiplicity="0..1" />
+    <End Role="Photo" Type="Self.Photo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Season">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Photo">
+        <PropertyRef Name="SeasonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Season_Applicant_Applicant">
+    <End Role="Applicant" Type="Self.Applicant" Multiplicity="1" />
+    <End Role="Season_Applicant" Type="Self.Season_Applicant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Season_Applicant">
+        <PropertyRef Name="ApplicantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Season_Applicant_Season">
+    <End Role="Season" Type="Self.Season" Multiplicity="1" />
+    <End Role="Season_Applicant" Type="Self.Season_Applicant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Season">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Season_Applicant">
+        <PropertyRef Name="SeasonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Season_Judge_Judge">
+    <End Role="Judge" Type="Self.Judge" Multiplicity="1" />
+    <End Role="Season_Judge" Type="Self.Season_Judge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Judge">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Season_Judge">
+        <PropertyRef Name="JudgeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Season_Judge_Season">
+    <End Role="Season" Type="Self.Season" Multiplicity="1" />
+    <End Role="Season_Judge" Type="Self.Season_Judge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Season">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Season_Judge">
+        <PropertyRef Name="SeasonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Winners_Applicant">
+    <End Role="Applicant" Type="Self.Applicant" Multiplicity="1" />
+    <End Role="Winners" Type="Self.Winners" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Winners">
+        <PropertyRef Name="ApplicantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Winners_Season">
+    <End Role="Season" Type="Self.Season" Multiplicity="1" />
+    <End Role="Winners" Type="Self.Winners" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Season">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Winners">
+        <PropertyRef Name="SeasonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LOFModelStoreContainer">
+    <EntitySet Name="AboutUs" EntityType="Self.AboutUs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Applicant" EntityType="Self.Applicant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Application" EntityType="Self.Application" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BlogPost" EntityType="Self.BlogPost" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Judge" EntityType="Self.Judge" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Photo" EntityType="Self.Photo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Season" EntityType="Self.Season" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Season_Applicant" EntityType="Self.Season_Applicant" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Season_Judge" EntityType="Self.Season_Judge" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Winners" EntityType="Self.Winners" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Application_Applicant" Association="Self.FK_Application_Applicant">
+      <End Role="Applicant" EntitySet="Applicant" />
+      <End Role="Application" EntitySet="Application" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BlogPost_Applicant" Association="Self.FK_BlogPost_Applicant">
+      <End Role="Applicant" EntitySet="Applicant" />
+      <End Role="BlogPost" EntitySet="BlogPost" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Photo_Applicant" Association="Self.FK_Photo_Applicant">
+      <End Role="Applicant" EntitySet="Applicant" />
+      <End Role="Photo" EntitySet="Photo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Photo_BlogPost" Association="Self.FK_Photo_BlogPost">
+      <End Role="BlogPost" EntitySet="BlogPost" />
+      <End Role="Photo" EntitySet="Photo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Photo_Season" Association="Self.FK_Photo_Season">
+      <End Role="Season" EntitySet="Season" />
+      <End Role="Photo" EntitySet="Photo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Season_Applicant_Applicant" Association="Self.FK_Season_Applicant_Applicant">
+      <End Role="Applicant" EntitySet="Applicant" />
+      <End Role="Season_Applicant" EntitySet="Season_Applicant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Season_Applicant_Season" Association="Self.FK_Season_Applicant_Season">
+      <End Role="Season" EntitySet="Season" />
+      <End Role="Season_Applicant" EntitySet="Season_Applicant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Season_Judge_Judge" Association="Self.FK_Season_Judge_Judge">
+      <End Role="Judge" EntitySet="Judge" />
+      <End Role="Season_Judge" EntitySet="Season_Judge" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Season_Judge_Season" Association="Self.FK_Season_Judge_Season">
+      <End Role="Season" EntitySet="Season" />
+      <End Role="Season_Judge" EntitySet="Season_Judge" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Winners_Applicant" Association="Self.FK_Winners_Applicant">
+      <End Role="Applicant" EntitySet="Applicant" />
+      <End Role="Winners" EntitySet="Winners" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Winners_Season" Association="Self.FK_Winners_Season">
+      <End Role="Season" EntitySet="Season" />
+      <End Role="Winners" EntitySet="Winners" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

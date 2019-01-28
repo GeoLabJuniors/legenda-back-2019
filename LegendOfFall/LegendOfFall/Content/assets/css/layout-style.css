@@ -1,0 +1,140 @@
+﻿body {
+    font-family: "BPG LE Studio 04 Caps", sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    min-width: 1250px;
+}
+
+.side-bar {
+    flex: 1;
+    background-color: rgb(0,0,0);
+    height: 100vh;
+}
+
+.side-bar ul {
+        display: block;
+}
+
+    .side-bar .logo {
+        padding: 15px;
+        background-color: #0072BC;
+    }
+
+.side-bar .logo img {
+            width: 100px;
+            display: block;
+            margin: 0 auto;
+ }
+
+    .side-bar ul li {
+        /*padding: 15px 0;*/
+    }
+
+        .side-bar ul li a {
+            font-size: 20px;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            height: 100%;
+            margin: 0 auto;
+            padding: 15px 0;
+        }
+
+    .side-bar .logo {
+        /*background-color: red;*/
+    }
+
+    .side-bar li {
+        width: 100%;
+        /*background-color: green;*/
+    }
+
+        .side-bar li:hover {
+            background-color: #F58220;
+        }
+
+.right-side {
+    flex: 4;
+    height: 100vh;
+    background-color: #dcdcdc;
+    overflow: auto;
+}
+
+.right-side .top-bar{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-end;
+    padding:15px 0;
+    font-size:20px;
+    background-color: rgba(0,0,0,0.8);
+    color:white;
+    height:50px;
+}
+
+
+.right-side .top-bar .greeting{
+    flex:1;
+    display:flex;  
+    justify-content:flex-end;
+    padding:0 30px;
+    line-height:50px;    
+}
+.right-side .top-bar .greeting a{
+    font-size:16px;
+    color:red;
+    margin:0 15px;
+    cursor:pointer;
+}
+
+.right-side .top-bar .greeting i{
+    margin-left:10px;
+}
+
+.right-side span{
+    margin:0 10px;
+}
+
+.content{
+    padding: 50px;
+}
+
+div.content-wrapper{
+    padding: 15px 50px;
+    background-color:#fff;
+}
+div.content-wrapper p{
+    padding:5px 0;
+}
+
+.btn{
+    padding:10px;
+    text-decoration:none;
+    background-color:seagreen;
+    color:white;
+    display:inline-block;
+    margin:10px 0;
+    border-radius:5px;
+}
+
+
+.btn-del{
+    background-color:tomato;
+}
+
+
+.btn-details {
+    background-color: #0072BC;
+}
+
+.btn-edit {
+    background-color: #F58220;
+}
+
+h1{
+    font-size:20px;
+    margin:10px;
+    text-align:center;
+}

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model LegendOfFall.Models.Season
+
+<link href="~/Content/assets/css/season-deletion.css" rel="stylesheet" />
+
+<div id="deletion-wrapper">
+    @using (Html.BeginForm("Delete", "Season", FormMethod.Post))
+    {
+        <p> სეზონის @Model.Title წაშლის შემთხვევაში წაიშლება მასთან დაკავშირებული ყველა მონაცემი </p>
+        <p>ნამდვლად გსურთ სეზონის წაშლა?</p>
+        <input name="Id" value="@Model.Id" style="display:none" />
+
+        <div>
+            <input type="submit" value="წაშლა" />
+        </div>
+    }
+
+</div>
+
+
+
+
+
+
+

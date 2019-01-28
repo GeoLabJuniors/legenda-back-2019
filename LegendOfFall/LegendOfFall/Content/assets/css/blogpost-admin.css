@@ -1,0 +1,35 @@
+﻿
+#blog .blog-wrapper{
+    padding:30px;
+    background-color:#fff;
+}
+
+#blog a{
+    background-color:seagreen;
+    color:white;
+    padding:10px;
+    text-decoration:none;
+    display:inline-block;
+    margin-top:15px;
+}
+
+    #blog .del{
+        background-color:tomato;
+    }
+
+    #blog .blog-wrapper {
+        display: flex;
+        margin-top: 15px;
+    }
+
+    #blog .blog-wrapper .img {
+        width: 100px;
+    }
+
+#blog .blog-wrapper .blog-info-wrapper{
+    margin-left:30px;
+}
+
+        #blog .blog-wrapper .blog-info-wrapper p{
+            margin-top:5px;
+        }

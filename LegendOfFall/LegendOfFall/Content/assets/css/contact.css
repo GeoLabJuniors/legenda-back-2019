@@ -1,0 +1,22 @@
+﻿.contact-wrapper{
+    width:70%;
+    margin:0 auto;
+    padding:50px;
+    background-color:#fff;
+}
+
+.contact-wrapper p{
+    display:inline-block;
+    padding:10px;
+}
+
+    .contact-wrapper div{
+        margin-top:15px;
+    }
+
+    .contact-wrapper a {
+        padding: 10px;
+        text-decoration: none;
+        background-color: yellow;
+        margin-left: 10px;
+    }

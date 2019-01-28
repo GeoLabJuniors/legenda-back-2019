@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model LegendOfFall.Models.BlogPost
+
+<h2>Details</h2>
+@{ 
+    var model = Model;
+    var status = Model.IsApproved == false || Model.IsApproved == null ? "ელოდება ადმინის თანხმობას" : "აქტიური";
+}
+
+<div class="content-wrapper">
+    <p>სათაური : @Model.Title</p>
+    <p>ტანი : @Model.Body</p>
+    <p>ავტორი : @Model.AuthorName</p>
+    <p>დამატების თარიღი : @Model.DateCreated    </p>
+    <p>სტატუსი : @status</p>
+    
+</div>
+

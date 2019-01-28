@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+@model LegendOfFall.Models.LoginViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LoginAdmin</title>
+    <link href="~/Content/assets/css/login-view.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="login-form-wrapper"> 
+        @using (Html.BeginForm("LoginAdmin", "Account", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken();
+
+            @Html.LabelFor(x=>x.Email)
+            @Html.TextBoxFor(x => x.Email);
+            @Html.ValidationMessageFor(x=>x.Email)
+
+            @Html.LabelFor(x=>x.Password)
+            @Html.PasswordFor(x=>x.Password)
+            @Html.ValidationMessageFor(x=>x.Password)
+
+            <input type="submit" value="შესვლა" />
+        }
+    </div>
+</body>
+</html>

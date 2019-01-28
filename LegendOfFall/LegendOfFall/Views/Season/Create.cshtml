@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model LegendOfFall.Models.Season
+
+<script src="~/Scripts/ckeditor/ckeditor.js"></script>
+
+<h1>სეზონის დამატება</h1>
+
+@using (Html.BeginForm("Create", "Season", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        @Html.LabelFor(x=>x.Title)@Html.TextBoxFor(x=>x.Title)        
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Description)@Html.TextAreaFor(x => x.Description, new {@class = "ckeditor" })
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Year)@Html.TextBoxFor(x => x.Year)
+    </div>
+    <div>
+        <input type="file" name="photo" multiple  />
+    </div>
+    <input type="submit" value="შენახვა" />
+}
+

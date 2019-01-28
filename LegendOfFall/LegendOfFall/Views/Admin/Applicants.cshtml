@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Applicants";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model  IEnumerable<LegendOfFall.Models.Applicant>
+
+<h1>მონაწილეები</h1>
+@foreach(var item in Model)
+{
+<div class="content-wrapper">
+    <p><strong>სეზონი:</strong> @item.Season_Applicant.FirstOrDefault().Season.Year</p>
+    <p><strong>სახელი:</strong> @item.FirstName</p>
+    <p><strong>გვარი:</strong> @item.LastName</p>
+    <p><strong>ელფოსტა:</strong> @item.Email</p>
+    <p><strong>ტელეფონის ნომერი:</strong> @item.PhoneNumber</p>
+    <a class="btn btn-edit" href="@Url.Action("Edit","Applicant", new {id = item.Id })" class="btn-edit">რედაქტირება</a>
+    <a class="btn btn-details" href="@Url.Action("Index","Applicant", new {id = item.Id })" class="btn-details">დეტალები</a>
+</div>
+}

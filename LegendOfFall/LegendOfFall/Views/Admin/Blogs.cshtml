@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Blogs";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model IEnumerable<LegendOfFall.Models.BlogPost>
+<div id="blog">
+
+    <h1>ბლოგპოსტები</h1>
+    <a class="btn" href="@Url.Action("Create","Blog")">ბლოგპოსტის დამატება</a>
+
+    @foreach (var item in Model)
+    {
+        <div class="content-wrapper">
+            @*<div class="img" style="width:100px">
+                    <img src="~/Content/assets/img/LegendLogo.svg" />
+                </div>*@
+            <div class="blog-info-wrapper">
+                <p><strong>სათაური</strong> @item.Title :</p>
+                <p><strong>აღწერა : </strong>@Html.Raw(item.Body)</p>
+                <p><strong>ავტორი:</strong> ავტორი</p>
+                <p><strong>შექმნის თარიღი : </strong>@item.DateCreated</p>
+            </div>
+        </div>
+        <a class="btn btn-edit" href="@Url.Action("Edit","Blog", new {id = item.Id })">რედაქტირება</a>
+        <a class="btn btn-del" href="@Url.Action("Delete","Blog",new {id = item.Id })">წაშლა</a>
+        <a class="btn btn-details" href="@Url.Action("Details","Blog",new {id = item.Id })">დეტალები</a>
+    }
+</div>
+

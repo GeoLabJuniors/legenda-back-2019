@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model LegendOfFall.Models.Contact
+
+@using (Html.BeginForm("Edit", "Contact", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(x=>x.Address)
+        <br>
+        @Html.EditorFor(x=>x.Address)
+    </div>
+
+    <div>
+        @Html.LabelFor(x=>x.Phone)
+        <br>
+        @Html.EditorFor(x=>x.Phone)
+    </div>
+
+    <div>
+        @Html.LabelFor(x=>x.Phone2)
+        <br>
+        @Html.EditorFor(x=>x.Phone2)
+    </div>
+
+    <div>
+        @Html.LabelFor(x=>x.Email)
+        <br>
+        @Html.EditorFor(x=>x.Email)
+    </div>
+
+    <div>
+        @Html.LabelFor(x=>x.Email2)
+        <br>
+        @Html.EditorFor(x=>x.Email2)
+    </div>
+
+    <input type="submit" value="შენახვა" class="btn" />
+}
+
+
