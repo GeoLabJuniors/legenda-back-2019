@@ -38,3 +38,13 @@ form {
     text-align: center;
     background-color: #0072BC;
 }
+
+span.field-validation-error {
+    color: red;
+    font-weight: bold;
+    font-size:17px;
+}
+
+.login-form-wrapper{
+    min-width:1200px;
+}

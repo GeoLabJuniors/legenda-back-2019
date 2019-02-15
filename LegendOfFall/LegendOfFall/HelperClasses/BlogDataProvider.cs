@@ -1,10 +1,10 @@
-﻿using System;
+﻿using LegendOfFall.Models;
+using LegendOfFall.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
-using LegendOfFall.Models;
-using System.IO;
-using System.Text;
 
 namespace LegendOfFall.HelperClasses
 {
@@ -23,7 +23,7 @@ namespace LegendOfFall.HelperClasses
             return _db.BlogPosts.FirstOrDefault(x => x.Id == id);
         }
 
-        public void Create(BlogPost model, HttpPostedFileBase[] photos)
+        public void Create(BlogViewModel model, HttpPostedFileBase[] photos)
         {
             var blogToAdd = new BlogPost();
             blogToAdd.Title = model.Title;
@@ -54,12 +54,22 @@ namespace LegendOfFall.HelperClasses
 
         }
 
-        public void Edit(BlogPost model)
+        public void Edit(BlogViewModel model)
         {
             var blogToEdit = _db.BlogPosts.FirstOrDefault(x => x.Id == model.Id);
             blogToEdit.Title = model.Title;
             blogToEdit.Body = model.Body;
 
+            _db.SaveChanges();
+        }
+
+        public void DeleteBlog(int id)
+        {
+            var blogToDelete = _db.BlogPosts.FirstOrDefault(x => x.Id == id);
+            var photosToDelete = _db.Photos.Where(x => x.BlogPostId == id);
+
+            _db.Photos.RemoveRange(photosToDelete);
+            _db.BlogPosts.Remove(blogToDelete);
             _db.SaveChanges();
         }
     }

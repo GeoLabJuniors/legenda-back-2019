@@ -9,7 +9,7 @@
 
 <h1>სეზონები</h1>
 <div class="foo">
-    <a class="btn"  href="@Url.Action("Create","Season")">სეზონის დამატება</a>
+    <a class="btn btn-success"  href="@Url.Action("Create","Season")">სეზონის დამატება</a>
 </div>
 
 <div id="seasons">
@@ -22,9 +22,9 @@
         <p><strong>ჩატარების წელი:</strong> @item.Year</p>
         <p><strong>აღწერა:</strong> @Html.Raw(item.Description)</p>
         <p><strong>დამატების თარიღი:</strong> @item.DateCreated</p>
-        <a class="btn btn-edit" href="@Url.Action("Edit","Season", new { Id = item.Id })">რედაქტირება</a>
-        <a class="btn btn-del" href="@Url.Action("Delete","Season", new { Id = item.Id })">წაშლა</a>
-        <a class="btn btn-details" href="@Url.Action("Delete","Season", new { Id = item.Id })">დეტალები</a>
+        <a class="btn btn-warning" href="@Url.Action("Edit","Season", new { Id = item.Id })">რედაქტირება</a>
+        <a class="btn btn-danger" href="@Url.Action("Delete","Season", new { Id = item.Id })">წაშლა</a>
+        <a class="btn btn-info" href="@Url.Action("Details","Season", new { Id = item.Id })">დეტალები</a>
     </div>
     }
 

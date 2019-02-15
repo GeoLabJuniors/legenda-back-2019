@@ -1,8 +1,7 @@
-﻿using System;
+﻿using LegendOfFall.Models;
+using LegendOfFall.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using LegendOfFall.Models;
 
 namespace LegendOfFall.HelperClasses
 {
@@ -21,7 +20,7 @@ namespace LegendOfFall.HelperClasses
             return _db.Contacts.FirstOrDefault();
         }
 
-        public void EditContacts(Contact model)
+        public void EditContacts(ContactViewModel model)
         {
             var toEdit = _db.Contacts.FirstOrDefault();
             toEdit.Address = model.Address;

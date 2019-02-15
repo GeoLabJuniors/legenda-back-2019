@@ -249,6 +249,11 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\AboutViewModel.cs" />
+    <Compile Include="ViewModels\ApplicantViewModel.cs" />
+    <Compile Include="ViewModels\BlogViewModel.cs" />
+    <Compile Include="ViewModels\ContactViewModel.cs" />
+    <Compile Include="ViewModels\SeasonViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\assets\css\about.css" />
@@ -262,6 +267,7 @@
     <Content Include="Content\assets\css\seasons.css" />
     <Content Include="Content\assets\img\68a86b5e-e398-4454-af1d-a0413a133235.jpg" />
     <Content Include="Content\assets\img\86bf61e4-9c0d-4495-99af-a515fe84dd26.jpg" />
+    <Content Include="Content\assets\img\e6ff2674-d4bd-4e73-a8c5-598016094046.jpg" />
     <Content Include="Content\assets\img\face.jpg" />
     <Content Include="Content\assets\img\LegendLogo.svg" />
     <Content Include="Content\assets\scripts\admin-panel.js" />
@@ -705,6 +711,7 @@
     <Content Include="Views\Blog\Details.cshtml" />
     <Content Include="Views\Blog\Delete.cshtml" />
     <Content Include="Views\Account\LoginAdmin.cshtml" />
+    <Content Include="Views\Season\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using LegendOfFall.HelperClasses;
+using LegendOfFall.ViewModels;
 using System.Web.Mvc;
-using LegendOfFall.Models;
-using LegendOfFall.HelperClasses;
 
 namespace LegendOfFall.Controllers
 {
+    [Authorize]
     public class ApplicantController : Controller
     {
         ApplicantDataProvider DP = new ApplicantDataProvider();
@@ -19,13 +16,26 @@ namespace LegendOfFall.Controllers
 
         public ActionResult Edit(int id)
         {
-            return View(DP.GetApplicantById(id));
+            var applicantToEdit = DP.GetApplicantById(id);
+            var model = new ApplicantViewModel()
+            {
+                Id = applicantToEdit.Id,
+                FirstName = applicantToEdit.FirstName,
+                LastName = applicantToEdit.LastName,
+                Bio = applicantToEdit.Bio,
+                PhoneNumber = applicantToEdit.PhoneNumber                
+            };
+            return View(model);
         }
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Edit(Applicant model)
+        public ActionResult Edit(ApplicantViewModel model)
         {
+            if(!ModelState.IsValid)
+            {
+                return View(model);
+            }
             DP.Edit(model);
             return RedirectToAction("Index", "Admin");
         }

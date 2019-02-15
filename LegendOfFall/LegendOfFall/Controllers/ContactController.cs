@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using LegendOfFall.HelperClasses;
+using LegendOfFall.ViewModels;
 using System.Web.Mvc;
-using LegendOfFall.Models;
-using LegendOfFall.HelperClasses;
 
 namespace LegendOfFall.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ContactController : Controller
     {
         AdminDataProvider DP = new AdminDataProvider();
@@ -19,11 +16,20 @@ namespace LegendOfFall.Controllers
 
         public ActionResult Edit()
         {
-            return View(DP.GetContact());
+            var contactObject = DP.GetContact();
+            var modelForView = new ContactViewModel()
+            {
+                Address = contactObject.Address,
+                Phone = contactObject.Phone,
+                Phone2 = contactObject.Phone2,
+                Email = contactObject.Email,
+                Email2 = contactObject.Email2
+            };
+            return View(modelForView);
         }
 
         [HttpPost]
-        public ActionResult Edit(Contact model)
+        public ActionResult Edit(ContactViewModel model)
         {
             DP.EditContacts(model);
             return RedirectToAction("Index", "Contact");

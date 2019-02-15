@@ -8,6 +8,8 @@
 
 <link href="~/Content/assets/css/season-deletion.css" rel="stylesheet" />
 
+<h1>წაშლა - @Model.Title</h1>
+
 <div id="deletion-wrapper">
     @using (Html.BeginForm("Delete", "Season", FormMethod.Post))
     {
@@ -15,8 +17,9 @@
         <p>ნამდვლად გსურთ სეზონის წაშლა?</p>
         <input name="Id" value="@Model.Id" style="display:none" />
 
-        <div>
-            <input type="submit" value="წაშლა" />
+        <div>            
+            <button type="submit" class="btn btn-danger">წაშლა</button>
+            <a href="@Url.Action("Seasons","Admin")" class="btn btn-warning">გაუქმება</a>
         </div>
     }
 

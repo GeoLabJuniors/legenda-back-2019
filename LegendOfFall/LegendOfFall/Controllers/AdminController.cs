@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using LegendOfFall.HelperClasses;
 using System.Web.Mvc;
-using LegendOfFall.Models;
-using LegendOfFall.HelperClasses;
 
 namespace LegendOfFall.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         AdminDataProvider DP = new AdminDataProvider();

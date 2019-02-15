@@ -5,18 +5,31 @@
 }
 @model LegendOfFall.Models.BlogPost
 
-<h2>Details</h2>
+<style>
+    img.blog-details{
+        width:100%;
+        height:400px;
+        object-fit:cover;
+        object-position:center;
+    }
+</style>
+
+<h1>@Model.Title</h1>
 @{ 
+    var img = (LegendOfFall.Models.Photo)ViewBag.Img;
     var model = Model;
     var status = Model.IsApproved == false || Model.IsApproved == null ? "ელოდება ადმინის თანხმობას" : "აქტიური";
 }
 
 <div class="content-wrapper">
-    <p>სათაური : @Model.Title</p>
-    <p>ტანი : @Model.Body</p>
-    <p>ავტორი : @Model.AuthorName</p>
-    <p>დამატების თარიღი : @Model.DateCreated    </p>
-    <p>სტატუსი : @status</p>
-    
+    <img class="blog-details" src="~/Content/assets/img/@img.Name@img.Extension" />
+    <p><strong>სათაური :</strong> @Model.Title</p>
+    <p><strong>ტანი :</strong> @Html.Raw(Model.Body)</p>
+    <p><strong>ავტორი :</strong> @Model.AuthorName</p>
+    <p><strong>დამატების თარიღი</strong> : @Model.DateCreated    </p>
+    <p><strong>სტატუსი :</strong> @status</p>
+
+    <a class="btn btn-warning" href="@Url.Action("Edit","Blog", new {id = Model.Id })">რედაქტირება</a>
+
 </div>
 

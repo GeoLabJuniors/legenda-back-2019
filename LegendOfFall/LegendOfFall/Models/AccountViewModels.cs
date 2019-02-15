@@ -48,12 +48,12 @@ namespace LegendOfFall.Models
 
     public class LoginViewModel
     {
-        [Required]
+        [Required(ErrorMessage ="შეიყვანეთ ელფოსტა")]
         [Display(Name = "ელფოსტა")]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="შეიყვანეთ პაროლი")]
         [DataType(DataType.Password)]
         [Display(Name = "პაროლი")]
         public string Password { get; set; }

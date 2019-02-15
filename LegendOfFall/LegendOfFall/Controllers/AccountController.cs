@@ -1,18 +1,15 @@
-﻿using System;
-using System.Globalization;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
+﻿using LegendOfFall.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using LegendOfFall.Models;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Web;
+using System.Web.Mvc;
 
 namespace LegendOfFall.Controllers
 {
-    [Authorize]
+    [Authorize(Roles ="Admin")]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -85,8 +82,11 @@ namespace LegendOfFall.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToAction("Index", "Admin");                
+                    return RedirectToAction("Applicants", "Admin");                
                 case SignInStatus.Failure:
+                    ViewBag.Error = "მონაცემები არასწორია";
+                    ModelState.AddModelError("", "მონაცემები არასწორია");
+                    return View(model);
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
                     return View(model);

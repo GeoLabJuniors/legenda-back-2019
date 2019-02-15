@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model LegendOfFall.Models.Season
+
+<style>
+    img.season-details {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    @{ 
+        var img = (LegendOfFall.Models.Photo)ViewBag.Img;
+    }
+</style>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <h1>@Model.Title</h1>
+    <div class="content-wrapper">
+        <img class="season-details" src="~/Content/assets/img/@img.Name@img.Extension" />
+        <p><strong> სეზონის სახელი:</strong> @Model.Title</p>
+        <p><strong> ჩატარების წელი:</strong> @Model.Year</p>
+        <p><strong> აღწერა:</strong> @Html.Raw(Model.Description)</p>
+        <a class="btn btn-warning" href="@Url.Action("Edit","Season", new { Id = Model.Id })">რედაქტირება</a>
+    </div>
+</body>
+</html>

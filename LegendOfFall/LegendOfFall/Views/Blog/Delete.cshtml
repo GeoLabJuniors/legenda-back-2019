@@ -4,5 +4,18 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Delete</h2>
+@model LegendOfFall.Models.BlogPost
+
+<h1>წაშლა</h1>
+<p>
+    დარწმინებული ხართ რომ გსურთ წაშალოთ ბლოგი @Model.Title ?
+</p>
+
+@using (Html.BeginForm("Delete", "Blog", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <button type="submit" class="btn btn-danger">წაშლა</button>
+    <a href="@Url.Action("Blogs","Admin")" class="btn btn-warning">გაუქმება</a>
+}
 

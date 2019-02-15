@@ -3,7 +3,7 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-@model LegendOfFall.Models.Season
+@model LegendOfFall.ViewModels.SeasonViewModel
 
 <script src="~/Scripts/ckeditor/ckeditor.js"></script>
 
@@ -11,18 +11,31 @@
 
 @using (Html.BeginForm("Create", "Season", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <div>
-        @Html.LabelFor(x=>x.Title)@Html.TextBoxFor(x=>x.Title)        
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(x=>x.Title)
+        @Html.TextBoxFor(x=>x.Title, new {@class = "form-control" })
+        @Html.ValidationMessageFor(x=>x.Title)
     </div>
-    <div>
-        @Html.LabelFor(x => x.Description)@Html.TextAreaFor(x => x.Description, new {@class = "ckeditor" })
+
+    <div class="form-group">
+        @Html.LabelFor(x=>x.Year)
+        @Html.TextBoxFor(x=>x.Year, new {@class = "form-control" })
+        @Html.ValidationMessageFor(x=>x.Year)
     </div>
+
+    
     <div>
-        @Html.LabelFor(x => x.Year)@Html.TextBoxFor(x => x.Year)
+        @Html.LabelFor(x => x.Description)
+        @Html.TextAreaFor(x => x.Description, new { @class = "ckeditor" })
+        @Html.ValidationMessageFor(x=>x.Description)
     </div>
-    <div>
+
+
+    <div class="form-group">
         <input type="file" name="photo" multiple  />
     </div>
-    <input type="submit" value="შენახვა" />
+    <button type="submit" class="btn btn-success">შენახვა</button>
 }
 

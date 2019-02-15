@@ -27,10 +27,7 @@
             display: block;
             margin: 0 auto;
  }
-
-    .side-bar ul li {
-        /*padding: 15px 0;*/
-    }
+    
 
         .side-bar ul li a {
             font-size: 20px;
@@ -43,9 +40,7 @@
             padding: 15px 0;
         }
 
-    .side-bar .logo {
-        /*background-color: red;*/
-    }
+  
 
     .side-bar li {
         width: 100%;
@@ -68,6 +63,7 @@
     flex-direction:row;
     justify-content:flex-end;
     padding:15px 0;
+    padding-bottom:60px;
     font-size:20px;
     background-color: rgba(0,0,0,0.8);
     color:white;
@@ -104,12 +100,13 @@
 div.content-wrapper{
     padding: 15px 50px;
     background-color:#fff;
+    margin: 30px 0;
 }
 div.content-wrapper p{
     padding:5px 0;
 }
 
-.btn{
+/*.btn{
     padding:10px;
     text-decoration:none;
     background-color:seagreen;
@@ -131,10 +128,22 @@ div.content-wrapper p{
 
 .btn-edit {
     background-color: #F58220;
-}
+}*/
 
 h1{
     font-size:20px;
     margin:10px;
     text-align:center;
 }
+
+span.field-validation-error {
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+cke_AboutUsDescription:focus{
+    outline:none;
+}
+
+

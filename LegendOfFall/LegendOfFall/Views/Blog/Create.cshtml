@@ -4,19 +4,30 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 <script src="~/Scripts/ckeditor/ckeditor.js"></script>
-@model LegendOfFall.Models.BlogPost
+@model LegendOfFall.ViewModels.BlogViewModel
 
-<h2>Create Blog</h2>
+<h1>ბლოგის დამატება</h1>
 
 @using (Html.BeginForm("Create", "Blog", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    <div>სათაური: @Html.TextBoxFor(x => x.Title)</div>
-    <div>
-        ტანი @Html.TextAreaFor(x => x.Body, new { @class = "ckeditor" })
+{    
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Title)
+        @Html.TextBoxFor(x => x.Title, new {@class="form-control" })
+        @Html.ValidationMessageFor(x => x.Title)
     </div>
-    <input type="file" name="photo" multiple />
-    <div>
-        <input type="submit" value="შენახვა" />
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Body)
+        @Html.TextAreaFor(x => x.Body, new { @class = "ckeditor" })
+        @Html.ValidationMessageFor(x => x.Body)
+    </div>    
+    
+
+    <div class="form-group">
+        <input type="file" name="photo" />
     </div>
+
+    <button type="submit" class="btn btn-success"> დამატება </button>
 }
 

@@ -11,6 +11,8 @@
 @using (Html.BeginForm("Edit", "About", FormMethod.Post))
 {
     @Html.TextAreaFor(x => x.AboutUsDescription, new { @class = "ckeditor" });
-    <input  type="submit" class="btn" value="შენახვა"/>
+    <button type="submit" class="btn btn-success" style="margin-top:15px"> შენახვა </button>
 }
+
+
 

@@ -3,20 +3,26 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-@model LegendOfFall.Models.BlogPost
+@model LegendOfFall.ViewModels.BlogViewModel
 
-<h2>Edit</h2>
+<h1>ბლოგის რედაქტირება</h1>
 
 @using (Html.BeginForm("Edit", "Blog", FormMethod.Post))
 {
-    <div>
-        სათაური @Html.EditorFor(x => x.Title)
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Title)
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Title)
     </div>
 
-    <div>
-        ტანი @Html.TextAreaFor(x => x.Body, new { @class = "ckeditor" });
+    <div class="form-group">
+        @Html.LabelFor(x => x.Body)
+        @Html.TextAreaFor(x => x.Body, new { @class = "ckeditor" })
+        @Html.ValidationMessageFor(x => x.Body)
     </div>
 
-    <input type="submit" value="რედაქტირება" />
+    <button type="submit" class="btn btn-success"> შენახვა </button>
 }
 

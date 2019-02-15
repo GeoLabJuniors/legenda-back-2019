@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using LegendOfFall.HelperClasses;
+using LegendOfFall.Models;
+using LegendOfFall.ViewModels;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using LegendOfFall.Models;
-using LegendOfFall.HelperClasses;
 
 namespace LegendOfFall.Controllers
 {
+    [Authorize]
     public class BlogController : Controller
     {
         BlogDataProvider DP = new BlogDataProvider();
@@ -17,9 +17,12 @@ namespace LegendOfFall.Controllers
             return View();
         }
 
+        [Authorize(Roles ="Admin")]
         public ActionResult Details(int id)
         {
-            return View(DP.GetBlogById(id));
+            var blogModel = DP.GetBlogById(id);
+            ViewBag.Img = blogModel.Photos.FirstOrDefault(x => x.BlogPostId == blogModel.Id);            
+            return View(blogModel);
         }
 
         public ActionResult Create()
@@ -29,33 +32,53 @@ namespace LegendOfFall.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Create(BlogPost model, HttpPostedFileBase[] photo)
+        public ActionResult Create(BlogViewModel model, HttpPostedFileBase[] photo)
         {
+            if(!ModelState.IsValid)
+            {
+                return View();
+            }
             DP.Create(model, photo);
-            return View();
+            return RedirectToAction("Blogs", "Admin");
         }
 
         public ActionResult Edit(int id)
         {
-            return View(DP.GetBlogById(id));
+            var blogToEdit = DP.GetBlogById(id);
+            var modelForView = new BlogViewModel()
+            {
+                Id = blogToEdit.Id,
+                Title = blogToEdit.Title,
+                Body = blogToEdit.Body
+            };
+            return View(modelForView);
         }
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Edit(BlogPost model)
+        public ActionResult Edit(BlogViewModel model)
         {
+            if(!ModelState.IsValid)
+            {
+                return View(model);
+            }
             DP.Edit(model);
-            return View();
+            return RedirectToAction("Blogs", "Admin");
         }
 
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id)
         {
-            return View();
+            var blogToDelete = DP.GetBlogById(id);
+
+            return View(blogToDelete);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public ActionResult Delete(BlogPost model)
         {
+            DP.DeleteBlog(model.Id);
             return RedirectToAction("Blogs", "Admin");
         }
     }

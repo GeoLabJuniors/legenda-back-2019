@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using LegendOfFall.Models;
+using LegendOfFall.ViewModels;
+using System;
+using System.IO;
 using System.Linq;
 using System.Web;
-using LegendOfFall.Models;
-using System.Text;
-using System.IO;
 
 namespace LegendOfFall.HelperClasses
 {
@@ -17,7 +16,7 @@ namespace LegendOfFall.HelperClasses
             return _db.Seasons.FirstOrDefault(x => x.Id == id);
         }
 
-        public void Create(Season model, HttpPostedFileBase[] photos)
+        public void Create(SeasonViewModel model, HttpPostedFileBase[] photos)
         {
             var seasonToAdd = new Season();
             seasonToAdd.Title = model.Title;
@@ -46,7 +45,7 @@ namespace LegendOfFall.HelperClasses
             }
         }
 
-        public void Edit(Season model)
+        public void Edit(SeasonViewModel model)
         {
             var seasonToEdit = _db.Seasons.FirstOrDefault(x => x.Id == model.Id);
 

@@ -3,41 +3,46 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-@model LegendOfFall.Models.Contact
+@model LegendOfFall.ViewModels.ContactViewModel
+
+<h1>საკონტაქტო ინფორმაციის რედაქტირება</h1>
 
 @using (Html.BeginForm("Edit", "Contact", FormMethod.Post))
 {
-    <div>
-        @Html.LabelFor(x=>x.Address)
-        <br>
-        @Html.EditorFor(x=>x.Address)
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Address)
+        @Html.TextBoxFor(x => x.Address, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Address)
     </div>
 
-    <div>
-        @Html.LabelFor(x=>x.Phone)
-        <br>
-        @Html.EditorFor(x=>x.Phone)
+    <div class="form-group">
+        @Html.LabelFor(x => x.Phone)
+        @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Phone)
     </div>
 
-    <div>
-        @Html.LabelFor(x=>x.Phone2)
-        <br>
-        @Html.EditorFor(x=>x.Phone2)
+    <div class="form-group">
+        @Html.LabelFor(x => x.Phone2)
+        @Html.TextBoxFor(x => x.Phone2, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Phone2)
     </div>
 
-    <div>
-        @Html.LabelFor(x=>x.Email)
-        <br>
-        @Html.EditorFor(x=>x.Email)
+    <div class="form-group">
+        @Html.LabelFor(x => x.Email)
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Email)
     </div>
 
-    <div>
-        @Html.LabelFor(x=>x.Email2)
-        <br>
-        @Html.EditorFor(x=>x.Email2)
+    <div class="form-group">
+        @Html.LabelFor(x => x.Email2)
+        @Html.TextBoxFor(x => x.Email2, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Email2)
     </div>
 
-    <input type="submit" value="შენახვა" class="btn" />
+
+    <button type="submit" class="btn btn-success">შენახვა</button>
 }
 
 

@@ -16,6 +16,7 @@
     <div class="login-form-wrapper"> 
         @using (Html.BeginForm("LoginAdmin", "Account", FormMethod.Post))
         {
+
             @Html.AntiForgeryToken();
 
             @Html.LabelFor(x=>x.Email)
@@ -25,6 +26,7 @@
             @Html.LabelFor(x=>x.Password)
             @Html.PasswordFor(x=>x.Password)
             @Html.ValidationMessageFor(x=>x.Password)
+            <span style="color:red;font-weight:bold">@ViewBag.Error</span>
 
             <input type="submit" value="შესვლა" />
         }

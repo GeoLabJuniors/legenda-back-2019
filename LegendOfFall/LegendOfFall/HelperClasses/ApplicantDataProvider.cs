@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using LegendOfFall.Models;
+using LegendOfFall.ViewModels;
 using System.Linq;
-using System.Web;
-using LegendOfFall.Models;
 
 namespace LegendOfFall.HelperClasses
 {
@@ -14,7 +12,7 @@ namespace LegendOfFall.HelperClasses
             return _db.Applicants.FirstOrDefault(x => x.Id == id);
         }
 
-        public void Edit(Applicant model)
+        public void Edit(ApplicantViewModel model)
         {
             var applicantToEdit = _db.Applicants.FirstOrDefault(x => x.Id == model.Id);
             applicantToEdit.FirstName = model.FirstName;

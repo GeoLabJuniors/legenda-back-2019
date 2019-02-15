@@ -15,7 +15,7 @@
     <p><strong>გვარი:</strong> @item.LastName</p>
     <p><strong>ელფოსტა:</strong> @item.Email</p>
     <p><strong>ტელეფონის ნომერი:</strong> @item.PhoneNumber</p>
-    <a class="btn btn-edit" href="@Url.Action("Edit","Applicant", new {id = item.Id })" class="btn-edit">რედაქტირება</a>
-    <a class="btn btn-details" href="@Url.Action("Index","Applicant", new {id = item.Id })" class="btn-details">დეტალები</a>
+    <a class="btn btn-warning" href="@Url.Action("Edit","Applicant", new {id = item.Id })" class="btn-edit">რედაქტირება</a>
+    <a class="btn btn-info" href="@Url.Action("Index","Applicant", new {id = item.Id })" class="btn-details">დეტალები</a>
 </div>
 }
