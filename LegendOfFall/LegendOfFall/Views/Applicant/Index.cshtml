@@ -10,13 +10,14 @@
 <div class="applicant-wrapper">
     <img src="~/Content/assets/img/face.jpg" />
     <p><strong>სახელი:</strong> @Model.FirstName</p>
-    <p>გვარი: @Model.LastName</p>
-    <p>სეზონი: @Model.Season_Applicant.FirstOrDefault().Season.Year</p>
-    <p>ელფოსტა: @Model.Email </p>
-    <p>ტელეფონის ნომერი: @Model.PhoneNumber </p>
-    <label for="is-finalist"> ფინალისტი </label>
+    <p><strong>გვარი: </strong>@Model.LastName</p>
+    <p><strong>სეზონი: </strong>@Model.Season_Applicant.FirstOrDefault().Season.Year</p>
+    <p><strong>ელფოსტა: </strong>@Model.Email </p>
+    <p><strong>ტელეფონის ნომერი:</strong> @Model.PhoneNumber </p>
+    <p><strong>ბიოგრაფია:</strong> @Html.Raw(Model.Bio)</p>
+
+    <label for="is-finalist"> <strong>ფინალისტი</strong> </label>
     <input id="is-finalist" type="checkbox" />
-    <p>ბიოგრაფია: @Html.Raw(Model.Bio)</p>
 
 
 </div>

@@ -13,34 +13,34 @@
     height: 100vh;
 }
 
-.side-bar ul {
+    .side-bar ul {
         display: block;
-}
+    }
 
     .side-bar .logo {
         padding: 15px;
         background-color: #0072BC;
     }
 
-.side-bar .logo img {
+        .side-bar .logo img {
             width: 100px;
             display: block;
             margin: 0 auto;
- }
-    
-
-        .side-bar ul li a {
-            font-size: 20px;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            display: block;
-            height: 100%;
-            margin: 0 auto;
-            padding: 15px 0;
         }
 
-  
+
+    .side-bar ul li a {
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        height: 100%;
+        margin: 0 auto;
+        padding: 15px 0;
+    }
+
+
 
     .side-bar li {
         width: 100%;
@@ -58,82 +58,60 @@
     overflow: auto;
 }
 
-.right-side .top-bar{
-    display:flex;
-    flex-direction:row;
-    justify-content:flex-end;
-    padding:15px 0;
-    padding-bottom:60px;
-    font-size:20px;
-    background-color: rgba(0,0,0,0.8);
-    color:white;
-    height:50px;
-}
+    .right-side .top-bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 15px 0;
+        padding-bottom: 60px;
+        font-size: 20px;
+        background-color: rgba(0,0,0,0.8);
+        color: white;
+        height: 50px;
+    }
 
 
-.right-side .top-bar .greeting{
-    flex:1;
-    display:flex;  
-    justify-content:flex-end;
-    padding:0 30px;
-    line-height:50px;    
-}
-.right-side .top-bar .greeting a{
-    font-size:16px;
-    color:red;
-    margin:0 15px;
-    cursor:pointer;
-}
+        .right-side .top-bar .greeting {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            padding: 0 30px;
+            line-height: 50px;
+        }
 
-.right-side .top-bar .greeting i{
-    margin-left:10px;
-}
+            .right-side .top-bar .greeting a {
+                font-size: 16px;
+                color: red;
+                margin: 0 15px;
+                cursor: pointer;
+            }
 
-.right-side span{
-    margin:0 10px;
-}
+            .right-side .top-bar .greeting i {
+                margin-left: 10px;
+            }
 
-.content{
+    .right-side span {
+        margin: 0 10px;
+    }
+
+.content {
     padding: 50px;
 }
 
-div.content-wrapper{
+div.content-wrapper {
     padding: 15px 50px;
-    background-color:#fff;
+    background-color: #fff;
     margin: 30px 0;
 }
-div.content-wrapper p{
-    padding:5px 0;
-}
 
-/*.btn{
-    padding:10px;
-    text-decoration:none;
-    background-color:seagreen;
-    color:white;
-    display:inline-block;
-    margin:10px 0;
-    border-radius:5px;
-}
+    div.content-wrapper p {
+        padding: 5px 0;
+    }
 
-
-.btn-del{
-    background-color:tomato;
-}
-
-
-.btn-details {
-    background-color: #0072BC;
-}
-
-.btn-edit {
-    background-color: #F58220;
-}*/
-
-h1{
-    font-size:20px;
-    margin:10px;
-    text-align:center;
+h1 {
+    font-size: 20px;
+    margin: 10px;
+    text-align: center;
 }
 
 span.field-validation-error {
@@ -142,8 +120,10 @@ span.field-validation-error {
     font-size: 14px;
 }
 
-cke_AboutUsDescription:focus{
-    outline:none;
+cke_AboutUsDescription:focus {
+    outline: none;
 }
 
-
+.active-menu-item {
+    background-color: #F58220;
+}

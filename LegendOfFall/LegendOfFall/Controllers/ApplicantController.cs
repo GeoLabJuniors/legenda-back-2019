@@ -37,7 +37,7 @@ namespace LegendOfFall.Controllers
                 return View(model);
             }
             DP.Edit(model);
-            return RedirectToAction("Index", "Admin");
+            return RedirectToAction("Applicants", "Admin");
         }
     }
 }

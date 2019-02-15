@@ -17,7 +17,7 @@
         </div>*@
         <div class="blog-info-wrapper">
             <p><strong>სათაური:</strong> @item.Title</p>
-            <p><strong>აღწერა : </strong>@Html.Raw(item.Body)</p>
+            <p><strong>აღწერა : </strong>@Html.Raw(item.Body.Substring(0,300)) ...</p>
             <p><strong>ავტორი:</strong> ავტორი</p>
             <p><strong>შექმნის თარიღი : </strong>@item.DateCreated</p>
         </div>

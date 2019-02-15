@@ -8,22 +8,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    @Scripts.Render("~/bundles/modernizr")    
     @Styles.Render("~/Content/css")
-    <link rel="stylesheet" href="~/Content/assets/css/reset.css">
-    <link rel="stylesheet" href="~/Content/assets/css/layout-style.css">
+    @Styles.Render("~/bundles/mystyles")
     <link rel="stylesheet" href="https://cdn.web-fonts.ge/fonts/bpg-le-studio-04-caps/css/bpg-le-studio-04-caps.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <script src="~/Scripts/ckeditor/ckeditor.js"></script>
 </head>
 <body>
     <div class="wrapper">
         <div class="side-bar">
             <div class="logo">
-                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-                <a href=""><img src="~/Content/assets/img/LegendLogo.svg" alt="legend of fall logo"></a>                
-                @Scripts.Render("~/bundles/modernizr")
+
+                <a href=""><img src="~/Content/assets/img/LegendLogo.svg" alt="legend of fall logo"></a>
             </div>
             <ul>
-                <li><a href="@Url.Action("Applicants","Admin")">მონაწილეები</a></li>
+                <li><a class="" href="@Url.Action("Applicants","Admin")">მონაწილეები</a></li>
                 <li><a href="@Url.Action("Seasons","Admin")">სეზონები</a></li>
                 <li><a href="@Url.Action("Blogs","Admin")">ბლოგი</a></li>
                 <li><a href="@Url.Action("About","Admin")">პროექტის შესახებ</a></li>
@@ -35,11 +35,12 @@
                 <div class="greeting">
                     <span>გამარჯობა</span>
                     <span class="user">@currentUser</span>
-                    <a class="log-out"> გამოსვლა<i class="fas fa-sign-out-alt"></i>
-                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post,new {id="log-out-form" }))
+                    <a class="log-out">
+                        გამოსვლა<i class="fas fa-sign-out-alt"></i>
+                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "log-out-form" }))
                         {
                             @Html.AntiForgeryToken()
-                            
+
                         }
                     </a>
                 </div>
@@ -49,8 +50,8 @@
             </div>
         </div>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/javascript")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
