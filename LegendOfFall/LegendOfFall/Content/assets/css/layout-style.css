@@ -127,3 +127,22 @@ cke_AboutUsDescription:focus {
 .active-menu-item {
     background-color: #F58220;
 }
+
+/*applicant inner styles*/
+
+.applicant-image{
+    width:300px;    
+}
+
+.additional-information{
+    display:flex
+}
+
+.additional-information .app-img-wrapper{
+    flex:1;
+}
+
+.additional-information .competition-info{
+    padding: 0 15px;
+    flex:3;
+}

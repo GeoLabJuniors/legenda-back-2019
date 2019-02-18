@@ -8,7 +8,32 @@
 <link href="~/Content/assets/css/layout-style.css" />
 
 <div class="content-wrapper">
-    <img src="~/Content/assets/img/face.jpg" />
+
+
+    <div class="additional-information">
+        <div class="applicant-img-wrapper">
+            <img class="applicant-image" src="~/Content/assets/img/face.jpg" />
+        </div>
+        <div class="competition-info">
+            <div class="form-group">
+                <label for="is-finalist"> <strong>ფინალისტი</strong> </label>
+                @Html.CheckBoxFor(x => x.IsFinalist)
+            </div>
+            <div class="form-group">
+                <label for="document">ფინალური ნაშრომის ატვირთვა</label>
+                @Html.TextBox("document", null, new { type = "file", @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.Label("არის სეზონის გამარჯვებული")
+                @Html.CheckBox("winner")
+            </div>
+            <div class="form-group">
+                @Html.Label("დაკავებული ადგილი")                
+            </div>
+        </div>
+    </div>
+
+
     <p><strong>სახელი:</strong> @Model.FirstName</p>
     <p><strong>გვარი: </strong>@Model.LastName</p>
     <p><strong>სეზონი: </strong>@Model.Season_Applicant.FirstOrDefault().Season.Year</p>
@@ -19,13 +44,9 @@
     <p><strong>დაბადების თარიღი: </strong>@Model.BirthDate</p>
     <p><strong>უნივერსიტეტი: </strong>@Model.University</p>
     <p><strong>ფაკულტეტი: </strong>@Model.Faculty</p>
-    <p><strong>ბიოგრაფია:</strong> @Html.Raw(Model.Bio)</p>
-    <p><strong>როგორ გავიგე კონკურსის შესახებ: </strong>@Model.How</p>
-    <p><strong>რატომ მინდა მონაწილეობა: </strong>@Model.Why</p>
-
-    <label for="is-finalist"> <strong>ფინალისტი</strong> </label>
-    <input id="is-finalist" type="checkbox" />
-
-
+    <p><strong>ბიოგრაფია</strong> @Html.Raw(Model.Bio)</p>
+    <p><strong>როგორ გავიგე კონკურსის შესახებ </strong><p>@Model.How</p>
+    <p><strong>რატომ მინდა მონაწილეობა </strong><p>@Model.Why</p>
+    
 </div>
 
