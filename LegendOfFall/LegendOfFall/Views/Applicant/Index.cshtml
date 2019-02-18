@@ -5,16 +5,23 @@
 }
 @model LegendOfFall.Models.Applicant
 
-<link href="~/Content/assets/css/applicant-inner.css" rel="stylesheet" />
+<link href="~/Content/assets/css/layout-style.css" />
 
-<div class="applicant-wrapper">
+<div class="content-wrapper">
     <img src="~/Content/assets/img/face.jpg" />
     <p><strong>სახელი:</strong> @Model.FirstName</p>
     <p><strong>გვარი: </strong>@Model.LastName</p>
     <p><strong>სეზონი: </strong>@Model.Season_Applicant.FirstOrDefault().Season.Year</p>
     <p><strong>ელფოსტა: </strong>@Model.Email </p>
     <p><strong>ტელეფონის ნომერი:</strong> @Model.PhoneNumber </p>
+    <p><strong>მისამართი: </strong>@Model.Address</p>
+    <p><strong>რეგისტრაციის თარიღი: </strong>@Model.DateJoined.Date</p>
+    <p><strong>დაბადების თარიღი: </strong>@Model.BirthDate</p>
+    <p><strong>უნივერსიტეტი: </strong>@Model.University</p>
+    <p><strong>ფაკულტეტი: </strong>@Model.Faculty</p>
     <p><strong>ბიოგრაფია:</strong> @Html.Raw(Model.Bio)</p>
+    <p><strong>როგორ გავიგე კონკურსის შესახებ: </strong>@Model.How</p>
+    <p><strong>რატომ მინდა მონაწილეობა: </strong>@Model.Why</p>
 
     <label for="is-finalist"> <strong>ფინალისტი</strong> </label>
     <input id="is-finalist" type="checkbox" />

@@ -256,15 +256,9 @@
     <Compile Include="ViewModels\SeasonViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\assets\css\about.css" />
-    <Content Include="Content\assets\css\applicant-inner.css" />
-    <Content Include="Content\assets\css\blogpost-admin.css" />
-    <Content Include="Content\assets\css\contact.css" />
     <Content Include="Content\assets\css\layout-style.css" />
     <Content Include="Content\assets\css\login-view.css" />
     <Content Include="Content\assets\css\reset.css" />
-    <Content Include="Content\assets\css\season-deletion.css" />
-    <Content Include="Content\assets\css\seasons.css" />
     <Content Include="Content\assets\img\68a86b5e-e398-4454-af1d-a0413a133235.jpg" />
     <Content Include="Content\assets\img\86bf61e4-9c0d-4495-99af-a515fe84dd26.jpg" />
     <Content Include="Content\assets\img\e6ff2674-d4bd-4e73-a8c5-598016094046.jpg" />
