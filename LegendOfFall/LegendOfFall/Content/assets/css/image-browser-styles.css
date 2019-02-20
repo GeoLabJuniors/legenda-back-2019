@@ -1,0 +1,46 @@
+﻿.img-gallery {
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.img-wrapper {
+    width: 20%;
+    height: 150px;
+    margin: 15px;
+}
+
+img.gallery-img {
+    width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center;    
+}
+
+.img-wrapper {
+    position: relative;
+}
+
+.img-dlt{
+    font-size:30px;    
+    color:white;
+    background-color:red;
+    padding:5px;
+    position:absolute;
+    top:0;
+    right:0;   
+    visibility:hidden;    
+}
+
+
+.img-dlt span{
+    display:block;
+    transform:rotate(45deg);
+    cursor:pointer;    
+}
+
+
+
+   

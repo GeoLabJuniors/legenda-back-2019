@@ -18,6 +18,7 @@ namespace LegendOfFall.Controllers
         {
             var viewModel = DP.GetSeasonById(id);
             ViewBag.Img = viewModel.Photos.FirstOrDefault(x => x.SeasonId == viewModel.Id);
+            ViewBag.Imgs = viewModel.Photos.Where(x => x.SeasonId == id);
             return View(viewModel);
         }
 
@@ -30,7 +31,7 @@ namespace LegendOfFall.Controllers
         [ValidateInput(false)]
         public ActionResult Create(SeasonViewModel model, HttpPostedFileBase[] photo)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View(model);
             }
@@ -49,18 +50,20 @@ namespace LegendOfFall.Controllers
                 Year = seasonToEdit.Year
             };
 
+            ViewBag.Imgs = seasonToEdit.Photos.Where(x => x.SeasonId == id);
+
             return View(viewModel);
         }
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Edit(SeasonViewModel model)
+        public ActionResult Edit(SeasonViewModel model, HttpPostedFileBase[] photo)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View(model);
             }
-            DP.Edit(model);
+            DP.Edit(model, photo);
             return RedirectToAction("Seasons", "Admin");
         }
 
@@ -73,7 +76,14 @@ namespace LegendOfFall.Controllers
         public ActionResult Delete(Season model)
         {
             DP.Delete(model.Id);
-            return RedirectToAction("Seasons", "Admin");
+            return RedirectToAction("Season", "Admin");
+        }
+
+        [HttpPost]
+        public JsonResult DeletePhoto(int id)
+        {
+            DP.DeletePhoto(id);
+            return Json("true");
         }
     }
 }

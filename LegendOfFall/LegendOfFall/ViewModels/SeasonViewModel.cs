@@ -17,5 +17,6 @@ namespace LegendOfFall.ViewModels
         [Display(Name = "აღწერა")]
         [Required(ErrorMessage = "აღწერა სავალდებულოა")]
         public string Description { get; set; }
+        
     }
 }

@@ -146,3 +146,11 @@ cke_AboutUsDescription:focus {
     padding: 0 15px;
     flex:3;
 }
+
+label{
+    margin-bottom:5px;
+}
+
+.btn{
+    margin:5px 0;
+}

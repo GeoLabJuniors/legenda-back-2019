@@ -45,7 +45,7 @@ namespace LegendOfFall.HelperClasses
             }
         }
 
-        public void Edit(SeasonViewModel model)
+        public void Edit(SeasonViewModel model, HttpPostedFileBase[] photos)
         {
             var seasonToEdit = _db.Seasons.FirstOrDefault(x => x.Id == model.Id);
 
@@ -54,6 +54,23 @@ namespace LegendOfFall.HelperClasses
             seasonToEdit.Year = model.Year;
 
             _db.SaveChanges();
+
+            foreach (var file in photos)
+            {
+                var fileName = Guid.NewGuid().ToString();
+                var extension = Path.GetExtension(file.FileName);
+                var path = Path.Combine(HttpContext.Current.Server.MapPath("~/Content/assets/img"), fileName + extension);
+
+                var photoToAdd = new Photo();
+                photoToAdd.SeasonId = seasonToEdit.Id;
+                photoToAdd.Name = fileName;
+                photoToAdd.Extension = extension;
+                photoToAdd.Path = path;
+
+                file.SaveAs(path);
+                _db.Photos.Add(photoToAdd);
+                _db.SaveChanges();
+            }
         }
 
         public void Delete(int id)
@@ -73,6 +90,13 @@ namespace LegendOfFall.HelperClasses
             _db.Season_Judge.RemoveRange(_db.Season_Judge.Where(x => x.SeasonId == id));
             _db.Seasons.Remove(seasonToDelete);
 
+            _db.SaveChanges();
+        }
+
+        public void DeletePhoto(int id)
+        {
+            var photoToDelete = _db.Photos.FirstOrDefault(x => x.Id == id);
+            _db.Photos.Remove(photoToDelete);
             _db.SaveChanges();
         }
     }

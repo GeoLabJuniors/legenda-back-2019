@@ -15,6 +15,7 @@
 
     @{ 
         var img = (LegendOfFall.Models.Photo)ViewBag.Img;
+        var imgs = (IEnumerable<LegendOfFall.Models.Photo>)ViewBag.Imgs;
     }
 </style>
 
@@ -32,7 +33,9 @@
         <p><strong> სეზონის სახელი:</strong> @Model.Title</p>
         <p><strong> ჩატარების წელი:</strong> @Model.Year</p>
         <p><strong> აღწერა:</strong> @Html.Raw(Model.Description)</p>
-        <a class="btn btn-warning" href="@Url.Action("Edit","Season", new { Id = Model.Id })">რედაქტირება</a>
+        <p><strong>ფოტოები</strong></p>
+        @Html.Partial("_ImageBrowserPartial",imgs)
     </div>
+    <a class="btn btn-warning" href="@Url.Action("Edit","Season", new { Id = Model.Id })">რედაქტირება</a>
 </body>
 </html>

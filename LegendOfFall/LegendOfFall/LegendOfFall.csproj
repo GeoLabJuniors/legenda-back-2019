@@ -256,6 +256,7 @@
     <Compile Include="ViewModels\SeasonViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\css\image-browser-styles.css" />
     <Content Include="Content\assets\css\layout-style.css" />
     <Content Include="Content\assets\css\login-view.css" />
     <Content Include="Content\assets\css\reset.css" />
@@ -707,6 +708,7 @@
     <Content Include="Views\Blog\Delete.cshtml" />
     <Content Include="Views\Account\LoginAdmin.cshtml" />
     <Content Include="Views\Season\Details.cshtml" />
+    <Content Include="Views\Shared\_ImageBrowserPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

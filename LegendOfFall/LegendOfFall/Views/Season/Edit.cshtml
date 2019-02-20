@@ -6,6 +6,21 @@
 
 @model LegendOfFall.ViewModels.SeasonViewModel
 
+@{
+    var imgs = (IEnumerable<LegendOfFall.Models.Photo>)ViewBag.Imgs;
+}
+
+<style>
+    a:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .img-wrapper:hover .img-dlt {
+        visibility: visible;
+    }
+</style>
+
 <script src="~/Scripts/ckeditor/ckeditor.js"></script>
 
 <h1>სეზონის რედაქტირება</h1>
@@ -17,7 +32,7 @@
 
     <div class="form-group">
         @Html.LabelFor(x => x.Title)
-        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+        @Html.TextBoxFor(x => x.Title, new { @class = "form-control", width = "400px" })
         @Html.ValidationMessageFor(x => x.Title)
     </div>
 
@@ -27,13 +42,21 @@
         @Html.ValidationMessageFor(x => x.Year)
     </div>
 
-
     <div>
         @Html.LabelFor(x => x.Description)
         @Html.TextAreaFor(x => x.Description, new { @class = "ckeditor" })
         @Html.ValidationMessageFor(x => x.Description)
     </div>
 
+    <div class="form-group">
+        <label for="photo">ფოტოს (ფოტოების) ატვირთვა</label>
+        <input id="photo" type="file" name="photo" multiple />
+    </div>
+
+    <div class="form-group">
+        <p style="margin-bottom:5px;"><strong>სეზონის ფოტოები</strong></p>
+        @Html.Partial("_ImageBrowserPartial", imgs)
+    </div>
     <button type="submit" class="btn btn-success"> შენახვა </button>
 }
 

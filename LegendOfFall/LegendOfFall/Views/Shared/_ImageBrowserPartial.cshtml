@@ -1,0 +1,36 @@
+﻿@model IEnumerable<LegendOfFall.Models.Photo>
+
+<link rel="stylesheet" href="~/Content/assets/css/image-browser-styles.css" />
+
+<div class="img-gallery">
+    @foreach (var img in Model)
+    {
+        <div class="img-wrapper">
+            <a href="~/Content/assets/img/@img.Name@img.Extension">
+                <img class="gallery-img" src="~/Content/assets/img/@img.Name@img.Extension" />
+                <a class="img-dlt" data-img-id="@img.Id">
+                    <span>+</span>
+                    <a />
+                </a>
+        </div>
+    }
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+<script>
+    var delButtons = $('.img-dlt');
+    delButtons.on("click", function () {
+        $.ajax({
+            url: "/Season/DeletePhoto",
+            type: "POST",
+            data: { "id": $(this).attr('data-img-id') },
+            success: function () {
+                location.reload();
+            },
+            error: function () {
+                alert("Failed");
+            }
+        });
+    });
+</script>
+
