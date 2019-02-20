@@ -5,9 +5,13 @@
 }
 @model LegendOfFall.ViewModels.BlogViewModel
 
+@{ 
+    var imgs = (IEnumerable<LegendOfFall.Models.Photo>)ViewBag.Imgs;
+}
+
 <h1>ბლოგის რედაქტირება</h1>
 
-@using (Html.BeginForm("Edit", "Blog", FormMethod.Post))
+@using (Html.BeginForm("Edit", "Blog", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -22,6 +26,16 @@
         @Html.TextAreaFor(x => x.Body, new { @class = "ckeditor" })
         @Html.ValidationMessageFor(x => x.Body)
     </div>
+
+    <div class="form-group">
+        @Html.Label("ფოტოს ატვირთვა")
+        <input type="file" name="photo" id="photo" />
+    </div>
+
+    <div class="form-group">
+        <p style="margin-bottom:5px;"><strong>ბლოგის ფოტოები</strong></p>
+        @Html.Partial("_ImageBrowserPartial", imgs)
+    </div>    
 
     <button type="submit" class="btn btn-success"> შენახვა </button>
 }

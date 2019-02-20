@@ -21,7 +21,8 @@ namespace LegendOfFall.Controllers
         public ActionResult Details(int id)
         {
             var blogModel = DP.GetBlogById(id);
-            ViewBag.Img = blogModel.Photos.FirstOrDefault(x => x.BlogPostId == blogModel.Id);            
+            ViewBag.Img = blogModel.Photos.FirstOrDefault(x => x.BlogPostId == blogModel.Id);
+            ViewBag.Imgs = blogModel.Photos;
             return View(blogModel);
         }
 
@@ -45,6 +46,7 @@ namespace LegendOfFall.Controllers
         public ActionResult Edit(int id)
         {
             var blogToEdit = DP.GetBlogById(id);
+            ViewBag.Imgs = blogToEdit.Photos;
             var modelForView = new BlogViewModel()
             {
                 Id = blogToEdit.Id,
@@ -56,13 +58,15 @@ namespace LegendOfFall.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Edit(BlogViewModel model)
+        public ActionResult Edit(BlogViewModel model, HttpPostedFileBase[] photo)
         {
             if(!ModelState.IsValid)
-            {
+            {                
+                var blogToEdit = DP.GetBlogById(model.Id);
+                ViewBag.Imgs = blogToEdit.Photos;
                 return View(model);
             }
-            DP.Edit(model);
+            DP.Edit(model, photo);
             return RedirectToAction("Blogs", "Admin");
         }
 

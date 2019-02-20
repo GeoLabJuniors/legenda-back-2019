@@ -5,17 +5,21 @@
 }
 @model LegendOfFall.Models.BlogPost
 
+@{
+    var imgs = (IEnumerable<LegendOfFall.Models.Photo>)ViewBag.Imgs;
+}
+
 <style>
-    img.blog-details{
-        width:100%;
-        height:400px;
-        object-fit:cover;
-        object-position:center;
+    img.blog-details {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        object-position: center;
     }
 </style>
 
 <h1>@Model.Title</h1>
-@{ 
+@{
     var img = (LegendOfFall.Models.Photo)ViewBag.Img;
     var model = Model;
     var status = Model.IsApproved == false || Model.IsApproved == null ? "ელოდება ადმინის თანხმობას" : "აქტიური";
@@ -28,6 +32,11 @@
     <p><strong>ავტორი :</strong> @Model.AuthorName</p>
     <p><strong>დამატების თარიღი</strong> : @Model.DateCreated    </p>
     <p><strong>სტატუსი :</strong> @status</p>
+
+    <div class="form-group">
+        <p style="margin-bottom:5px;"><strong>ბლოგის ფოტოები</strong></p>
+        @Html.Partial("_ImageBrowserPartial", imgs)
+    </div>
 
     <a class="btn btn-warning" href="@Url.Action("Edit","Blog", new {id = Model.Id })">რედაქტირება</a>
 

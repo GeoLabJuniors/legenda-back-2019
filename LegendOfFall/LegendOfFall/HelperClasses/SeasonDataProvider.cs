@@ -55,21 +55,24 @@ namespace LegendOfFall.HelperClasses
 
             _db.SaveChanges();
 
-            foreach (var file in photos)
+            if(photos[0] != null )
             {
-                var fileName = Guid.NewGuid().ToString();
-                var extension = Path.GetExtension(file.FileName);
-                var path = Path.Combine(HttpContext.Current.Server.MapPath("~/Content/assets/img"), fileName + extension);
+                foreach (var file in photos)
+                {
+                    var fileName = Guid.NewGuid().ToString();
+                    var extension = Path.GetExtension(file.FileName);
+                    var path = Path.Combine(HttpContext.Current.Server.MapPath("~/Content/assets/img"), fileName + extension);
 
-                var photoToAdd = new Photo();
-                photoToAdd.SeasonId = seasonToEdit.Id;
-                photoToAdd.Name = fileName;
-                photoToAdd.Extension = extension;
-                photoToAdd.Path = path;
+                    var photoToAdd = new Photo();
+                    photoToAdd.SeasonId = seasonToEdit.Id;
+                    photoToAdd.Name = fileName;
+                    photoToAdd.Extension = extension;
+                    photoToAdd.Path = path;
 
-                file.SaveAs(path);
-                _db.Photos.Add(photoToAdd);
-                _db.SaveChanges();
+                    file.SaveAs(path);
+                    _db.Photos.Add(photoToAdd);
+                    _db.SaveChanges();
+                }
             }
         }
 

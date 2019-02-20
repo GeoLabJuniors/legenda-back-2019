@@ -5,14 +5,20 @@
 <div class="img-gallery">
     @foreach (var img in Model)
     {
-        <div class="img-wrapper">
-            <a href="~/Content/assets/img/@img.Name@img.Extension">
-                <img class="gallery-img" src="~/Content/assets/img/@img.Name@img.Extension" />
-                <a class="img-dlt" data-img-id="@img.Id">
-                    <span>+</span>
-                    <a />
-                </a>
+    <div class="img-wrapper">
+        <a href="~/Content/assets/img/@img.Name@img.Extension">
+            <img class="gallery-img" src="~/Content/assets/img/@img.Name@img.Extension" />
+        </a>
+        <div class="img-dlt" data-img-id="@img.Id">
+            <span>+</span>
         </div>
+        @*<a href="~/Content/assets/img/@img.Name@img.Extension">
+            <img class="gallery-img" src="~/Content/assets/img/@img.Name@img.Extension" />
+            <a class="img-dlt" data-img-id="@img.Id">
+                <span>+</span>
+            <a />
+        </a>*@
+    </div>
     }
 </div>
 
@@ -20,17 +26,18 @@
 <script>
     var delButtons = $('.img-dlt');
     delButtons.on("click", function () {
+        $(this).parent().hide();
         $.ajax({
             url: "/Season/DeletePhoto",
             type: "POST",
             data: { "id": $(this).attr('data-img-id') },
             success: function () {
-                location.reload();
+                console.log("...")
             },
             error: function () {
                 alert("Failed");
             }
-        });
+        });        
     });
 </script>
 

@@ -35,32 +35,55 @@ namespace LegendOfFall.HelperClasses
             _db.BlogPosts.Add(blogToAdd);
             _db.SaveChanges();
 
-            foreach (var file in photos)
+            if(photos[0] != null)
             {
-                var fileName = Guid.NewGuid().ToString();
-                var extension = Path.GetExtension(file.FileName);
-                var path = Path.Combine(HttpContext.Current.Server.MapPath("~/Content/assets/img"), fileName + extension);
+                foreach (var file in photos)
+                {
+                    var fileName = Guid.NewGuid().ToString();
+                    var extension = Path.GetExtension(file.FileName);
+                    var path = Path.Combine(HttpContext.Current.Server.MapPath("~/Content/assets/img"), fileName + extension);
 
-                var photoToAdd = new Photo();
-                photoToAdd.BlogPostId = blogToAdd.Id;
-                photoToAdd.Name = fileName;
-                photoToAdd.Extension = extension;
-                photoToAdd.Path = path;
+                    var photoToAdd = new Photo();
+                    photoToAdd.BlogPostId = blogToAdd.Id;
+                    photoToAdd.Name = fileName;
+                    photoToAdd.Extension = extension;
+                    photoToAdd.Path = path;
 
-                file.SaveAs(path);
-                _db.Photos.Add(photoToAdd);
-                _db.SaveChanges();
+                    file.SaveAs(path);
+                    _db.Photos.Add(photoToAdd);
+                    _db.SaveChanges();
+                }
             }
 
         }
 
-        public void Edit(BlogViewModel model)
+        public void Edit(BlogViewModel model, HttpPostedFileBase[] photos)
         {
             var blogToEdit = _db.BlogPosts.FirstOrDefault(x => x.Id == model.Id);
             blogToEdit.Title = model.Title;
             blogToEdit.Body = model.Body;
 
             _db.SaveChanges();
+
+            if (photos[0] != null)
+            {
+                foreach (var file in photos)
+                {
+                    var fileName = Guid.NewGuid().ToString();
+                    var extension = Path.GetExtension(file.FileName);
+                    var path = Path.Combine(HttpContext.Current.Server.MapPath("~/Content/assets/img"), fileName + extension);
+
+                    var photoToAdd = new Photo();
+                    photoToAdd.BlogPostId = blogToEdit.Id;
+                    photoToAdd.Name = fileName;
+                    photoToAdd.Extension = extension;
+                    photoToAdd.Path = path;
+
+                    file.SaveAs(path);
+                    _db.Photos.Add(photoToAdd);
+                    _db.SaveChanges();
+                }
+            }
         }
 
         public void DeleteBlog(int id)
