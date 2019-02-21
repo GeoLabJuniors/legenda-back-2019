@@ -25,12 +25,13 @@ namespace LegendOfFall.HelperClasses
 
         public void Create(BlogViewModel model, HttpPostedFileBase[] photos)
         {
+            var user = HttpContext.Current.User.Identity;
             var blogToAdd = new BlogPost();
             blogToAdd.Title = model.Title;
             blogToAdd.Body = model.Body;
             blogToAdd.DateCreated = DateTime.Now.Date;
             blogToAdd.ApplicantId = 1;
-            blogToAdd.AuthorName = "Not implemented yet";
+            blogToAdd.AuthorName = user.Name ;
 
             _db.BlogPosts.Add(blogToAdd);
             _db.SaveChanges();
@@ -60,10 +61,16 @@ namespace LegendOfFall.HelperClasses
         public void Edit(BlogViewModel model, HttpPostedFileBase[] photos)
         {
             var blogToEdit = _db.BlogPosts.FirstOrDefault(x => x.Id == model.Id);
-            blogToEdit.Title = model.Title;
-            blogToEdit.Body = model.Body;
 
-            _db.SaveChanges();
+            if(blogToEdit != null)
+            {
+                blogToEdit.Title = model.Title;
+                blogToEdit.Body = model.Body;
+                blogToEdit.IsApproved = model.IsApproved;
+
+                _db.SaveChanges();
+            }
+            
 
             if (photos[0] != null)
             {

@@ -13,5 +13,8 @@ namespace LegendOfFall.ViewModels
         [Required(ErrorMessage = "მიუთითეთ ბლოგის ტანი")]
         [Display(Name ="ბლოგის ტანი")]
         public string Body { get; set; }
+
+        [Display(Name ="აქტიური სტატუსი")]
+        public bool IsApproved { get; set; }
     }
 }

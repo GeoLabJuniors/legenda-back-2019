@@ -51,7 +51,9 @@ namespace LegendOfFall.Controllers
             {
                 Id = blogToEdit.Id,
                 Title = blogToEdit.Title,
-                Body = blogToEdit.Body
+                Body = blogToEdit.Body,
+                IsApproved = (bool)blogToEdit.IsApproved
+                
             };
             return View(modelForView);
         }
