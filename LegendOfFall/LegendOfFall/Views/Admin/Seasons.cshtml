@@ -19,8 +19,7 @@
     <div class="content-wrapper">
         <span style="display:none">@item.Id</span>
         <p><strong>სახელი:</strong> @item.Title</p>
-        <p><strong>ჩატარების წელი:</strong> @item.Year</p>
-        <p><strong>აღწერა:</strong> @Html.Raw(item.Description.Substring(0,300)) ...</p>
+        <p><strong>ჩატარების წელი:</strong> @item.Year</p>        
         <p><strong>დამატების თარიღი:</strong> @item.DateCreated</p>
         <a class="btn btn-warning" href="@Url.Action("Edit","Season", new { Id = item.Id })">რედაქტირება</a>
         <a class="btn btn-danger" href="@Url.Action("Delete","Season", new { Id = item.Id })">წაშლა</a>
