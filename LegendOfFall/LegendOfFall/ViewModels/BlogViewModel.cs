@@ -14,7 +14,7 @@ namespace LegendOfFall.ViewModels
         [Display(Name ="ბლოგის ტანი")]
         public string Body { get; set; }
 
-        [Display(Name ="აქტიური სტატუსი")]
+        [Display(Name ="აქვს აქტიური სტატუსი")]
         public bool IsApproved { get; set; }
     }
 }

@@ -52,7 +52,7 @@ namespace LegendOfFall.Controllers
                 Id = blogToEdit.Id,
                 Title = blogToEdit.Title,
                 Body = blogToEdit.Body,
-                IsApproved = (bool)blogToEdit.IsApproved
+                IsApproved = blogToEdit.IsApproved == null ? false : (bool)blogToEdit.IsApproved
                 
             };
             return View(modelForView);
