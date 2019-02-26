@@ -32,7 +32,7 @@
         <img class="season-details" src="~/Content/assets/img/@img.Name@img.Extension" />
         <p><strong> სეზონის სახელი:</strong> @Model.Title</p>
         <p><strong> ჩატარების წელი:</strong> @Model.Year</p>
-        <p><strong> აღწერა:</strong> @Html.Raw(Model.Description)</p>
+        <p class="arial"><strong> აღწერა:</strong> @Html.Raw(Model.Description)</p>
         <p><strong>ფოტოები</strong></p>
         @Html.Partial("_ImageBrowserPartial",imgs)
     </div>

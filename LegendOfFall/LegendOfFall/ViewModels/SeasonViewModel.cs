@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using LegendOfFall.CustomValidation;
+using System.ComponentModel.DataAnnotations;
+using System.Web;
 
 namespace LegendOfFall.ViewModels
 {
@@ -17,6 +19,10 @@ namespace LegendOfFall.ViewModels
         [Display(Name = "აღწერა")]
         [Required(ErrorMessage = "აღწერა სავალდებულოა")]
         public string Description { get; set; }
-        
+
+        [Display(Name ="ფოტო")]
+        [ValidateUpload]
+        public HttpPostedFileBase[] Upload { get; set; }
+
     }
 }

@@ -10,22 +10,24 @@
     <a class="btn btn-success" href="@Url.Action("Create","Blog")">ბლოგპოსტის დამატება</a>
 
     @foreach (var item in Model)
-        {
-            var body = item.Body.Length > 200 ? item.Body.Substring(0, 200)+"..." : item.Body;
-    <div class="content-wrapper">
-        @*<div class="img" style="width:100px">
-            <img src="~/Content/assets/img/LegendLogo.svg" />
-        </div>*@
-        <div class="blog-info-wrapper"> 
-            <p><strong>სათაური:</strong> @item.Title</p>            
-            <p><strong>ავტორი:</strong> @item.AuthorName</p>
-            <p><strong>შექმნის თარიღი : </strong>@item.DateCreated</p>
+    {
+        var body = item.Body.Length > 200 ? item.Body.Substring(0, 200) + "..." : item.Body;
+        var status = item.IsApproved == false || item.IsApproved == null ? "ელოდება ადმინის თანხმობას" : "აქტიური";
+        <div class="content-wrapper">
+            @*<div class="img" style="width:100px">
+                    <img src="~/Content/assets/img/LegendLogo.svg" />
+                </div>*@
+            <div class="blog-info-wrapper">
+                <p><strong>სათაური:</strong> @item.Title</p>
+                <p><strong>ავტორი: </strong> @item.AuthorName</p>
+                <p><strong>სტატუსი: </strong>@status</p>
+                <p><strong>შექმნის თარიღი : </strong>@item.DateCreated</p>
+            </div>
+            <a class="btn btn-warning" href="@Url.Action("Edit","Blog", new {id = item.Id })">რედაქტირება</a>
+            <a class="btn btn-danger" href="@Url.Action("Delete","Blog",new {id = item.Id })">წაშლა</a>
+            <a class="btn btn-info" href="@Url.Action("Details","Blog",new {id = item.Id })">დეტალები</a>
         </div>
-        <a class="btn btn-warning" href="@Url.Action("Edit","Blog", new {id = item.Id })">რედაქტირება</a>
-        <a class="btn btn-danger" href="@Url.Action("Delete","Blog",new {id = item.Id })">წაშლა</a>
-        <a class="btn btn-info" href="@Url.Action("Details","Blog",new {id = item.Id })">დეტალები</a>
-    </div>
-        
+
     }
 </div>
 

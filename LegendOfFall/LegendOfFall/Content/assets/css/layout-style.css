@@ -154,3 +154,13 @@ label{
 .btn{
     margin:5px 0;
 }
+
+/*font*/
+
+.arial + p {
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing:1px;
+    font-size:16px;
+    line-height:18px;
+    font-weight:lighter;
+}

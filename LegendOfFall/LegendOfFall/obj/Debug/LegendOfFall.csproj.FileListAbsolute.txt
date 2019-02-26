@@ -320,7 +320,6 @@ C:\Users\Dimitri\Desktop\Geolab\legenda-back-2019\LegendOfFall\LegendOfFall\bin\
 C:\Users\Dimitri\Desktop\Geolab\legenda-back-2019\LegendOfFall\LegendOfFall\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\Dimitri\Desktop\Geolab\legenda-back-2019\LegendOfFall\LegendOfFall\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\Dimitri\Desktop\Geolab\legenda-back-2019\LegendOfFall\LegendOfFall\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Dimitri\Desktop\Geolab\legenda-back-2019\LegendOfFall\LegendOfFall\obj\Debug\LegendOfFall.csprojAssemblyReference.cache
 C:\Users\Dimitri\Desktop\Geolab\legenda-back-2019\LegendOfFall\LegendOfFall\obj\Debug\LegendOfFall.csproj.CoreCompileInputs.cache
 C:\Users\Dimitri\Desktop\Geolab\legenda-back-2019\LegendOfFall\LegendOfFall\obj\Debug\LegendOfFall.csproj.CopyComplete
 C:\Users\Dimitri\Desktop\Geolab\legenda-back-2019\LegendOfFall\LegendOfFall\obj\Debug\LegendOfFall.dll

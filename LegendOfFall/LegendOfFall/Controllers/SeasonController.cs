@@ -2,7 +2,6 @@
 using LegendOfFall.Models;
 using LegendOfFall.ViewModels;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace LegendOfFall.Controllers
@@ -29,13 +28,13 @@ namespace LegendOfFall.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Create(SeasonViewModel model, HttpPostedFileBase[] photo)
+        public ActionResult Create(SeasonViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
-            DP.Create(model, photo);
+            DP.Create(model, model.Upload);
             return RedirectToAction("Seasons", "Admin");
         }
 
@@ -57,13 +56,13 @@ namespace LegendOfFall.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Edit(SeasonViewModel model, HttpPostedFileBase[] photo)
+        public ActionResult Edit(SeasonViewModel model)
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
-            DP.Edit(model, photo);
+            DP.Edit(model, model.Upload);
             return RedirectToAction("Seasons", "Admin");
         }
 
@@ -76,7 +75,7 @@ namespace LegendOfFall.Controllers
         public ActionResult Delete(Season model)
         {
             DP.Delete(model.Id);
-            return RedirectToAction("Season", "Admin");
+            return RedirectToAction("Seasons", "Admin");
         }
 
         [HttpPost]
