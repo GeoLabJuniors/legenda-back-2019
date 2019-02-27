@@ -164,3 +164,10 @@ label{
     line-height:18px;
     font-weight:lighter;
 }
+
+/*radiobuttons*/
+
+.status{
+    cursor:pointer;
+    width:15px;
+}

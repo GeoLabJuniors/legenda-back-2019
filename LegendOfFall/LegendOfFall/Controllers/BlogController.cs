@@ -2,7 +2,6 @@
 using LegendOfFall.Models;
 using LegendOfFall.ViewModels;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace LegendOfFall.Controllers
@@ -33,13 +32,13 @@ namespace LegendOfFall.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Create(BlogViewModel model, HttpPostedFileBase[] photo)
+        public ActionResult Create(BlogViewModel model)
         {
             if(!ModelState.IsValid)
             {
                 return View();
             }
-            DP.Create(model, photo);
+            DP.Create(model, model.Upload);
             return RedirectToAction("Blogs", "Admin");
         }
 
@@ -47,7 +46,7 @@ namespace LegendOfFall.Controllers
         {
             var blogToEdit = DP.GetBlogById(id);
             ViewBag.Imgs = blogToEdit.Photos;
-            var modelForView = new BlogViewModel()
+            var modelForView = new BlogEditionViewModel()
             {
                 Id = blogToEdit.Id,
                 Title = blogToEdit.Title,
@@ -60,7 +59,7 @@ namespace LegendOfFall.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Edit(BlogViewModel model, HttpPostedFileBase[] photo)
+        public ActionResult Edit(BlogEditionViewModel model)
         {
             if(!ModelState.IsValid)
             {                
@@ -68,7 +67,7 @@ namespace LegendOfFall.Controllers
                 ViewBag.Imgs = blogToEdit.Photos;
                 return View(model);
             }
-            DP.Edit(model, photo);
+            DP.Edit(model);
             return RedirectToAction("Blogs", "Admin");
         }
 

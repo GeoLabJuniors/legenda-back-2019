@@ -1,4 +1,7 @@
 ﻿using LegendOfFall.HelperClasses;
+using LegendOfFall.Models;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace LegendOfFall.Controllers
@@ -33,5 +36,24 @@ namespace LegendOfFall.Controllers
         {
             return View(DP.GetBlogs());
         }        
+
+        public PartialViewResult BlogsByStatus(string status)
+        {
+            var blogsToReturn = new List<BlogPost>();
+            switch(status)
+            {
+                case "approved":
+                    blogsToReturn = DP.GetBlogs().Where(x => x.IsApproved == true).ToList();
+                    break;
+                case "waiting":
+                    blogsToReturn = DP.GetBlogs().Where(x => x.IsApproved != true).ToList();
+                    break;
+                default:
+                    blogsToReturn = DP.GetBlogs().ToList();
+                    break;
+            }
+
+            return PartialView("_BlogPartial", blogsToReturn);
+        }
     }
 }

@@ -25,8 +25,9 @@
     
 
     <div class="form-group">
-        @Html.Label("ფოტოს ატვირთვა")
-        <input type="file" name="photo" id="photo" />
+        @Html.LabelFor(x=>x.Upload)
+        <input type="file" name="@Html.NameFor(x=>x.Upload)" id="@Html.IdFor(x=>x.Upload)" multiple />
+        @Html.ValidationMessageFor(x=>x.Upload)
     </div>
 
     <button type="submit" class="btn btn-success"> დამატება </button>

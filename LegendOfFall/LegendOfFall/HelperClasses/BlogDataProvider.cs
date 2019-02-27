@@ -31,7 +31,8 @@ namespace LegendOfFall.HelperClasses
             blogToAdd.Body = model.Body;
             blogToAdd.DateCreated = DateTime.Now.Date;
             blogToAdd.ApplicantId = 1;
-            blogToAdd.AuthorName = user.Name ;
+            blogToAdd.AuthorName = user.Name;
+            blogToAdd.IsApproved = false;
 
             _db.BlogPosts.Add(blogToAdd);
             _db.SaveChanges();
@@ -58,7 +59,7 @@ namespace LegendOfFall.HelperClasses
 
         }
 
-        public void Edit(BlogViewModel model, HttpPostedFileBase[] photos)
+        public void Edit(BlogEditionViewModel model)
         {
             var blogToEdit = _db.BlogPosts.FirstOrDefault(x => x.Id == model.Id);
 
@@ -72,9 +73,9 @@ namespace LegendOfFall.HelperClasses
             }
             
 
-            if (photos[0] != null)
+            if (model.Upload != null)
             {
-                foreach (var file in photos)
+                foreach (var file in model.Upload)
                 {
                     var fileName = Guid.NewGuid().ToString();
                     var extension = Path.GetExtension(file.FileName);

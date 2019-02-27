@@ -252,6 +252,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\ApplicantViewModel.cs" />
+    <Compile Include="ViewModels\BlogEditionViewModel.cs" />
     <Compile Include="ViewModels\BlogViewModel.cs" />
     <Compile Include="ViewModels\ContactViewModel.cs" />
     <Compile Include="ViewModels\SeasonViewModel.cs" />
@@ -710,6 +711,7 @@
     <Content Include="Views\Account\LoginAdmin.cshtml" />
     <Content Include="Views\Season\Details.cshtml" />
     <Content Include="Views\Shared\_ImageBrowserPartial.cshtml" />
+    <Content Include="Views\Shared\_BlogPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
