@@ -25,6 +25,7 @@
     <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
     <Property Name="IsFinalist" Type="bit" Nullable="false" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserId" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Application">
     <Key>
@@ -82,6 +83,7 @@
     <Property Name="Extension" Type="nvarchar" MaxLength="400" Nullable="false" />
     <Property Name="Path" Type="nvarchar" MaxLength="400" Nullable="false" />
     <Property Name="DisplayOnMain" Type="bit" />
+    <Property Name="JudgeId" Type="int" />
   </EntityType>
   <EntityType Name="Season">
     <Key>

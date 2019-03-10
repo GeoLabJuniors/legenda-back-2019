@@ -30,6 +30,7 @@
           <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
           <Property Name="IsFinalist" Type="bit" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserId" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Application">
           <Key>
@@ -87,6 +88,7 @@
           <Property Name="Extension" Type="nvarchar" MaxLength="400" Nullable="false" />
           <Property Name="Path" Type="nvarchar" MaxLength="400" Nullable="false" />
           <Property Name="DisplayOnMain" Type="bit" />
+          <Property Name="JudgeId" Type="int" />
         </EntityType>
         <EntityType Name="Season">
           <Key>
@@ -357,6 +359,7 @@
           <NavigationProperty Name="Season_Applicant" Relationship="Self.FK_Season_Applicant_Applicant" FromRole="Applicant" ToRole="Season_Applicant" />
           <NavigationProperty Name="Winners" Relationship="Self.FK_Winners_Applicant" FromRole="Applicant" ToRole="Winners" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Application">
           <Key>
@@ -421,6 +424,7 @@
           <NavigationProperty Name="Applicant" Relationship="Self.FK_Photo_Applicant" FromRole="Photo" ToRole="Applicant" />
           <NavigationProperty Name="BlogPost" Relationship="Self.FK_Photo_BlogPost" FromRole="Photo" ToRole="BlogPost" />
           <NavigationProperty Name="Season" Relationship="Self.FK_Photo_Season" FromRole="Photo" ToRole="Season" />
+          <Property Name="JudgeId" Type="Int32" />
         </EntityType>
         <EntityType Name="Season">
           <Key>
@@ -684,6 +688,7 @@
           <EntitySetMapping Name="Applicants">
             <EntityTypeMapping TypeName="LOFModel.Applicant">
               <MappingFragment StoreEntitySet="Applicant">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -752,6 +757,7 @@
           <EntitySetMapping Name="Photos">
             <EntityTypeMapping TypeName="LOFModel.Photo">
               <MappingFragment StoreEntitySet="Photo">
+                <ScalarProperty Name="JudgeId" ColumnName="JudgeId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="ApplicantId" ColumnName="ApplicantId" />
                 <ScalarProperty Name="SeasonId" ColumnName="SeasonId" />

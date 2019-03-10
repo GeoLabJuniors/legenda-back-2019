@@ -35,7 +35,12 @@ namespace LegendOfFall.Controllers
         public ActionResult Blogs()
         {
             return View(DP.GetBlogs());
-        }        
+        }   
+        
+        public ActionResult Judges()
+        {
+            return View(DP.GetJudges());
+        }
 
         public PartialViewResult BlogsByStatus(string status)
         {

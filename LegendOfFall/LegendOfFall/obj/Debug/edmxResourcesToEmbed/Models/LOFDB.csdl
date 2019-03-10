@@ -30,6 +30,7 @@
     <NavigationProperty Name="Season_Applicant" Relationship="Self.FK_Season_Applicant_Applicant" FromRole="Applicant" ToRole="Season_Applicant" />
     <NavigationProperty Name="Winners" Relationship="Self.FK_Winners_Applicant" FromRole="Applicant" ToRole="Winners" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Application">
     <Key>
@@ -94,6 +95,7 @@
     <NavigationProperty Name="Applicant" Relationship="Self.FK_Photo_Applicant" FromRole="Photo" ToRole="Applicant" />
     <NavigationProperty Name="BlogPost" Relationship="Self.FK_Photo_BlogPost" FromRole="Photo" ToRole="BlogPost" />
     <NavigationProperty Name="Season" Relationship="Self.FK_Photo_Season" FromRole="Photo" ToRole="Season" />
+    <Property Name="JudgeId" Type="Int32" />
   </EntityType>
   <EntityType Name="Season">
     <Key>

@@ -12,6 +12,7 @@
     <EntitySetMapping Name="Applicants">
       <EntityTypeMapping TypeName="LOFModel.Applicant">
         <MappingFragment StoreEntitySet="Applicant">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -80,6 +81,7 @@
     <EntitySetMapping Name="Photos">
       <EntityTypeMapping TypeName="LOFModel.Photo">
         <MappingFragment StoreEntitySet="Photo">
+          <ScalarProperty Name="JudgeId" ColumnName="JudgeId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="ApplicantId" ColumnName="ApplicantId" />
           <ScalarProperty Name="SeasonId" ColumnName="SeasonId" />

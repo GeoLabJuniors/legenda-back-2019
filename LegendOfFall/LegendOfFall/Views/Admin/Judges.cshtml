@@ -1,0 +1,27 @@
+﻿@model  IEnumerable<LegendOfFall.Models.Judge>
+
+@{
+    ViewBag.Title = "Blogs";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>ჟიური</h1>
+
+<a class="btn btn-success" href="@Url.Action("Create","Judge")">ჟიურის დამატება</a>
+
+
+    @foreach (var judge in Model)
+    {
+        <div class="content-wrapper">
+                <div class="judge-info-wrapper">
+                    <p><strong>სახელი : </strong> @judge.FirstName</p>
+                    <p><strong>გვარი : </strong>@judge.LastName</p>
+                    <p><strong>სეზონი : </strong> @judge.Season_Judge.FirstOrDefault().Season.Year</p>
+                </div>
+                <a class="btn btn-warning" href="@Url.Action("Edit","Blog", new {id = judge.Id })">რედაქტირება</a>
+                <a class="btn btn-danger" href="@Url.Action("Delete","Blog",new {id = judge.Id })">წაშლა</a>
+                <a class="btn btn-info" href="@Url.Action("Details","Blog",new {id = judge.Id })">დეტალები</a>
+        </div>
+    }
+
+

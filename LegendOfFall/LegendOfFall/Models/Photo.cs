@@ -22,6 +22,7 @@ namespace LegendOfFall.Models
         public string Extension { get; set; }
         public string Path { get; set; }
         public Nullable<bool> DisplayOnMain { get; set; }
+        public Nullable<int> JudgeId { get; set; }
     
         public virtual Applicant Applicant { get; set; }
         public virtual BlogPost BlogPost { get; set; }
