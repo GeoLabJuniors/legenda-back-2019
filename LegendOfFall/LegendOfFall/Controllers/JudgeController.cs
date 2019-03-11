@@ -20,18 +20,14 @@ namespace LegendOfFall.Controllers
 
         public ActionResult Create()
         {
-            var checkList = new List<JudgedSeason>();
+            var seasons = DP.GetSeasons();
+            var model = new JudgeCreationViewModel();
+            model.JudgedSeasonList = new List<JudgedSeason>();
 
-            var seasons = DP.GetSeasons();            
-            foreach(var season in seasons)
+            foreach (Season item in seasons)
             {
-                checkList.Add(new JudgedSeason() { IsChecked = false, Season = season });
-            }
-
-            var model = new JudgeCreationViewModel()
-            {
-                JudgedSeasonList = checkList
-            };            
+                model.JudgedSeasonList.Add(new JudgedSeason() { IsChecked = false, SeasonId = item.Id, season = item });
+            }                        
 
             return View(model);
         }
@@ -39,19 +35,28 @@ namespace LegendOfFall.Controllers
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult Create(JudgeCreationViewModel model)
-        {
-            var checkList = new List<JudgedSeason>();
-
-            var seasons = DP.GetSeasons();
-            foreach (var season in seasons)
-            {
-                checkList.Add(new JudgedSeason() { IsChecked = false, Season = season });
-            }
-
-            model.JudgedSeasonList = checkList;
+        {           
 
             DP.Create(model);
-            return RedirectToAction("Index","Admin");
+            return RedirectToAction("Judges","Admin");
+        }
+
+
+
+        public ActionResult Edit(int id)
+        {
+            var judge = DP.GetJudgeById(id);
+            
+            return View(judge);
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult Edit(Judge model)
+        {
+            DP.Edit(model);
+
+            return RedirectToAction("Judges","Admin");
         }
     }
 }

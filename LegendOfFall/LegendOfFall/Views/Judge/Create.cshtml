@@ -42,7 +42,8 @@
         <div>
             @for (int i = 0; i < Model.JudgedSeasonList.Count; i++)
             {
-                <span>@Model.JudgedSeasonList[i].Season.Year</span>@Html.CheckBoxFor(x => x.JudgedSeasonList[i].IsChecked)                
+                <span>@Model.JudgedSeasonList[i].season.Year</span>@Html.CheckBoxFor(x => x.JudgedSeasonList[i].IsChecked)   
+                @Html.HiddenFor(x=>x.JudgedSeasonList[i].SeasonId)
             }
         </div>
     </div>

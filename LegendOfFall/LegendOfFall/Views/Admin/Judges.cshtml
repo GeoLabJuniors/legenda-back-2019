@@ -11,16 +11,25 @@
 
 
     @foreach (var judge in Model)
-    {
+    {        
         <div class="content-wrapper">
                 <div class="judge-info-wrapper">
                     <p><strong>სახელი : </strong> @judge.FirstName</p>
                     <p><strong>გვარი : </strong>@judge.LastName</p>
-                    <p><strong>სეზონი : </strong> @judge.Season_Judge.FirstOrDefault().Season.Year</p>
+                    <p><strong>ელფოსტა : </strong>@judge.Email</p>
+                    <p>
+                    <strong>სეზონი(სეზონები) : </strong>
+                        @foreach (var item in judge.Season_Judge)
+                        {
+                            <span> @item.Season.Year </span>
+                        }
+                    </p>
                 </div>
-                <a class="btn btn-warning" href="@Url.Action("Edit","Blog", new {id = judge.Id })">რედაქტირება</a>
-                <a class="btn btn-danger" href="@Url.Action("Delete","Blog",new {id = judge.Id })">წაშლა</a>
-                <a class="btn btn-info" href="@Url.Action("Details","Blog",new {id = judge.Id })">დეტალები</a>
+                
+
+                <a class="btn btn-warning" href="@Url.Action("Edit","Judge", new {id = judge.Id })">რედაქტირება</a>
+                <a class="btn btn-danger" href="@Url.Action("Delete","Judge",new {id = judge.Id })">წაშლა</a>
+                <a class="btn btn-info" href="@Url.Action("Details","Judge",new {id = judge.Id })">დეტალები</a>
         </div>
     }
 

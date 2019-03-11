@@ -25,7 +25,7 @@ namespace LegendOfFall.HelperClasses
         
         public IEnumerable<Season> GetSeasons()
         {
-            return _Context.Seasons;
+            return _Context.Seasons.ToList();
         }
 
         public void Create(JudgeCreationViewModel model)
@@ -44,7 +44,7 @@ namespace LegendOfFall.HelperClasses
 
 
                 _Context.Judges.Add(judgeToAdd);
-                //_Context.SaveChanges();
+                _Context.SaveChanges();
 
 
 
@@ -68,16 +68,34 @@ namespace LegendOfFall.HelperClasses
                 //adding season_judge
                 foreach (var item in model.JudgedSeasonList)
                 {
-                    var season_JudgeToAdd = new Season_Judge()
+                    if(item.IsChecked)
                     {
-                        JudgeId = judgeToAdd.Id,
-                        SeasonId = item.Season.Id
-                    };
+                        var season_JudgeToAdd = new Season_Judge()
+                        {
+                            JudgeId = judgeToAdd.Id,
+                            SeasonId = item.SeasonId
+                        };
 
-                    _Context.Season_Judge.Add(season_JudgeToAdd);
-                    _Context.SaveChanges();
+                        _Context.Season_Judge.Add(season_JudgeToAdd);
+                        _Context.SaveChanges();
+                    }                    
                 }
 
+            }
+        }
+
+
+        public void Edit(Judge model)
+        {
+            var judgeToEdit = GetJudgeById(model.Id);
+            if(judgeToEdit != null)
+            {
+                judgeToEdit.FirstName = model.FirstName;
+                judgeToEdit.LastName = model.LastName;
+                judgeToEdit.Email = model.Email;
+                judgeToEdit.Bio = model.Bio;
+
+                _Context.SaveChanges();
             }
         }
     }

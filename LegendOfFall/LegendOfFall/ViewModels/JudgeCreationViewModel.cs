@@ -29,7 +29,8 @@ namespace LegendOfFall.ViewModels
 
     public class JudgedSeason
     {
-        public Season Season { get; set; }
+        public int SeasonId { get; set; }
         public bool IsChecked { get; set; }
+        public Season season { get; set; }
     }
 }

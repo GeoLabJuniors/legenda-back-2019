@@ -258,6 +258,7 @@
     <Compile Include="ViewModels\BlogViewModel.cs" />
     <Compile Include="ViewModels\ContactViewModel.cs" />
     <Compile Include="ViewModels\JudgeCreationViewModel.cs" />
+    <Compile Include="ViewModels\JudgeEditionViewModel.cs" />
     <Compile Include="ViewModels\JudgeViewModel.cs" />
     <Compile Include="ViewModels\SeasonViewModel.cs" />
   </ItemGroup>
@@ -718,6 +719,7 @@
     <Content Include="Views\Shared\_BlogPartial.cshtml" />
     <Content Include="Views\Admin\Judges.cshtml" />
     <Content Include="Views\Judge\Create.cshtml" />
+    <Content Include="Views\Judge\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,35 @@
+﻿@model LegendOfFall.Models.Judge
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "Judge", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.Id)
+    <div class="form-group">
+        @Html.LabelFor(x => x.FirstName)
+        @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.LastName)
+        @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Email)
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Bio)
+        @Html.TextAreaFor(x => x.Bio, new { @class = "ckeditor" })
+    </div>
+
+    <button class="btn btn-success" type="submit">შენახვა</button>
+}
+
