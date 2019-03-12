@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model LegendOfFall.Models.Judge
+
+<link href="~/Content/assets/css/season-deletion.css" rel="stylesheet" />
+
+<h1>წაშლა - @Model.FirstName @Model.LastName</h1>
+
+<div id="deletion-wrapper">
+    @using (Html.BeginForm("Delete", "Judge", FormMethod.Post))
+    {        
+        <p>ნამდვლად გსურთ ჟიურის წევრის წაშლა?</p>
+        @Html.HiddenFor(x=>x.Id)
+
+        <div>
+            <button type="submit" class="btn btn-danger">წაშლა</button>
+            <a href="@Url.Action("Judges","Admin")" class="btn btn-warning">გაუქმება</a>
+        </div>
+    }
+
+</div>
+

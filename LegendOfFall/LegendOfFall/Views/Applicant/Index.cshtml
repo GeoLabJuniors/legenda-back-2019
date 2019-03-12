@@ -5,8 +5,6 @@
 }
 @model LegendOfFall.Models.Applicant
 
-<link href="~/Content/assets/css/layout-style.css" />
-
 <div class="content-wrapper">
 
 
@@ -47,6 +45,8 @@
     <p class="arial"><strong>ბიოგრაფია</strong> @Html.Raw(Model.Bio)</p>
     <p><strong>როგორ გავიგე კონკურსის შესახებ </strong><p>@Model.How</p>
     <p><strong>რატომ მინდა მონაწილეობა </strong><p>@Model.Why</p>
+
+    <a class="btn btn-warning" href="@Url.Action("Applicants","Admin")">სიაზე დაბრუნება</a>
     
 </div>
 

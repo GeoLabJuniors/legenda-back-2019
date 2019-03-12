@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@model LegendOfFall.Models.Judge
+
+<h1>@Model.FirstName @Model.LastName</h1>
+
+
+<div class="content-wrapper">
+
+    <img class="applicant-image" src="@ViewBag.X" />
+    <p><strong>სახელი:</strong> @Model.FirstName</p>
+    <p><strong>გვარი:</strong> @Model.LastName</p>
+    <p><strong>ელფოსტა:</strong> @Model.Email</p>
+    <p class="arial"><strong>ბიოგრაფია:</strong> @Html.Raw(Model.Bio)</p>
+
+    <a class="btn btn-warning" href="@Url.Action("Judges","Admin")">სიაზე დაბრუნება</a>
+
+</div>
+

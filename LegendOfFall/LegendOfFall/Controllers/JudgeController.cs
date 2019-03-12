@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using LegendOfFall.HelperClasses;
 using LegendOfFall.Models;
 using LegendOfFall.ViewModels;
+using System.Text;
+using System.IO;
 
 namespace LegendOfFall.Controllers
 {
@@ -13,9 +15,13 @@ namespace LegendOfFall.Controllers
     {
         JudgeControllerDataProvider DP = new JudgeControllerDataProvider();
         // GET: Judge
-        public ActionResult Index()
+        public ActionResult Details(int id)
         {
-            return View();
+            var image = DP.GetPhotoByJudgeId(id);
+            string imageFullName = image.Name + image.Extension;
+            
+            ViewBag.ImagePath = Url.Content("~/Content/assets/img/" + imageFullName);
+            return View(DP.GetJudgeById(id));
         }
 
         public ActionResult Create()
@@ -58,5 +64,23 @@ namespace LegendOfFall.Controllers
 
             return RedirectToAction("Judges","Admin");
         }
+
+
+
+        public ActionResult Delete(int id)
+        {
+            var judgeToDelete = DP.GetJudgeById(id);
+            return View(judgeToDelete);
+        }
+
+
+        [HttpPost]
+        public ActionResult Delete(Judge model)
+        {
+            DP.Delete(model);
+
+            return RedirectToAction("Judges", "Admin");
+        }
+
     }
 }

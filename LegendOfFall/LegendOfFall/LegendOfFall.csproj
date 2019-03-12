@@ -720,6 +720,8 @@
     <Content Include="Views\Admin\Judges.cshtml" />
     <Content Include="Views\Judge\Create.cshtml" />
     <Content Include="Views\Judge\Edit.cshtml" />
+    <Content Include="Views\Judge\Delete.cshtml" />
+    <Content Include="Views\Judge\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

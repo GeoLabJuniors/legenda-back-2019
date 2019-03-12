@@ -28,6 +28,11 @@ namespace LegendOfFall.HelperClasses
             return _Context.Seasons.ToList();
         }
 
+        public Photo GetPhotoByJudgeId(int id)
+        {
+            return _Context.Photos.FirstOrDefault(x => x.JudgeId == id);
+        }
+
         public void Create(JudgeCreationViewModel model)
         {
 
@@ -97,6 +102,21 @@ namespace LegendOfFall.HelperClasses
 
                 _Context.SaveChanges();
             }
+        }
+
+        public void Delete(Judge model)
+        {
+            var judgeToDelete = _Context.Judges.FirstOrDefault(x => x.Id == model.Id);
+            var season_JudgesToDelete = _Context.Season_Judge.Where(x => x.JudgeId == model.Id);
+
+            if(judgeToDelete != null)
+            {
+                _Context.Season_Judge.RemoveRange(season_JudgesToDelete);
+                _Context.Judges.Remove(judgeToDelete);
+
+                _Context.SaveChanges();
+            }
+
         }
     }
 }
