@@ -11,27 +11,32 @@
     <div class="form-group">
         @Html.LabelFor(x => x.FirstName)
         @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x=>x.FirstName)
     </div>
 
 
     <div class="form-group">
         @Html.LabelFor(x => x.LastName)
         @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x=>x.LastName)
     </div>
 
     <div class="form-group">
         @Html.LabelFor(x=>x.Email)
         @Html.TextBoxFor(x=>x.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x=>x.Email)
     </div>
 
     <div class="form-group">
         @Html.LabelFor(x=>x.Bio)
         @Html.TextAreaFor(x=>x.Bio, new { @class="ckeditor"})
+        @Html.ValidationMessageFor(x=>x.Bio)
     </div>
 
     <div class="form-group">
         @Html.LabelFor(x=>x.Upload)
         <input class="form-control" type="file" name="Upload" id="Upload" />
+        @Html.ValidationMessageFor(x => x.Upload)
     </div>
 
     

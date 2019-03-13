@@ -11,6 +11,7 @@ using System.IO;
 
 namespace LegendOfFall.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class JudgeController : Controller
     {
         JudgeControllerDataProvider DP = new JudgeControllerDataProvider();

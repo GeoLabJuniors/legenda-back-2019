@@ -8,16 +8,20 @@ namespace LegendOfFall.ViewModels
 {
     public class JudgeEditionViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "მიუთითეთ სახელი")]
+        [Display(Name ="სახელი")]
         public string FirstName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "მიუთითეთ გვარი")]
+        [Display(Name = "გვარი")]
         public string LastName { get; set; }
 
+        [Display(Name = "ბიოგრაფია")]
         public string Bio { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "მიუთითეთ ელფოსტა")]
         [EmailAddress]
+        [Display(Name = "ელფოსტა")]
         public string Email { get; set; }
     }
 }
