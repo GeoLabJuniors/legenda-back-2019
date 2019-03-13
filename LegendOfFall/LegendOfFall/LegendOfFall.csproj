@@ -186,6 +186,7 @@
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SeasonController.cs" />
+    <Compile Include="CustomValidation\ValidateSingleUpload.cs" />
     <Compile Include="CustomValidation\ValidateUpload.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -259,7 +260,6 @@
     <Compile Include="ViewModels\ContactViewModel.cs" />
     <Compile Include="ViewModels\JudgeCreationViewModel.cs" />
     <Compile Include="ViewModels\JudgeEditionViewModel.cs" />
-    <Compile Include="ViewModels\JudgeViewModel.cs" />
     <Compile Include="ViewModels\SeasonViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

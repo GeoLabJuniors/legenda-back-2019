@@ -42,10 +42,20 @@ namespace LegendOfFall.Controllers
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult Create(JudgeCreationViewModel model)
-        {           
+        {
 
-            DP.Create(model);
-            return RedirectToAction("Judges","Admin");
+            if (ModelState.IsValid)
+            {
+                DP.Create(model);
+                return RedirectToAction("Judges", "Admin");
+            }
+
+            foreach(var item in model.JudgedSeasonList)
+            {
+                item.season = DP.GetSeasons().FirstOrDefault(x => x.Id == item.SeasonId);
+            }
+
+            return View(model);
         }
 
 

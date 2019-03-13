@@ -28,7 +28,7 @@ namespace LegendOfFall.ViewModels
 
         public List<JudgedSeason> JudgedSeasonList { get; set; }
 
-        [ValidateSingleUpload]
+        [ValidateSingleUpload(ErrorMessage ="ატვირთეთ ფოტო")]
         public HttpPostedFileBase Upload { get; set; }
 
     }
