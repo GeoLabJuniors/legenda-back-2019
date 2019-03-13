@@ -63,13 +63,21 @@ namespace LegendOfFall.Controllers
         public ActionResult Edit(int id)
         {
             var judge = DP.GetJudgeById(id);
+
+            var model = new JudgeEditionViewModel()
+            {
+                FirstName = judge.FirstName,
+                LastName = judge.LastName,
+                Bio = judge.Bio,
+                Email = judge.Email
+            };
             
-            return View(judge);
+            return View(model);
         }
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Edit(Judge model)
+        public ActionResult Edit(JudgeEditionViewModel model)
         {
             DP.Edit(model);
 

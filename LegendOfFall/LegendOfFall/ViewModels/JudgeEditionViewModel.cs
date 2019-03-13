@@ -8,6 +8,9 @@ namespace LegendOfFall.ViewModels
 {
     public class JudgeEditionViewModel
     {
+        [ScaffoldColumn(false)]
+        public int Id { get; set; }
+
         [Required(ErrorMessage = "მიუთითეთ სახელი")]
         [Display(Name ="სახელი")]
         public string FirstName { get; set; }

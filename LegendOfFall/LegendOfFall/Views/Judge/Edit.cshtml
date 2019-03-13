@@ -1,10 +1,10 @@
-﻿@model LegendOfFall.Models.Judge
+﻿@model LegendOfFall.ViewModels.JudgeEditionViewModel
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Edit</h2>
+<h1>რედაქტირება - @Model.FirstName @Model.LastName</h1>
 
 @using (Html.BeginForm("Edit", "Judge", FormMethod.Post))
 {

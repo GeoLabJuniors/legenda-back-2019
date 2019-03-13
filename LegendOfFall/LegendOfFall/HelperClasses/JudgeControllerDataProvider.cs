@@ -90,7 +90,7 @@ namespace LegendOfFall.HelperClasses
         }
 
 
-        public void Edit(Judge model)
+        public void Edit(JudgeEditionViewModel model)
         {
             var judgeToEdit = GetJudgeById(model.Id);
             if(judgeToEdit != null)
