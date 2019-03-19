@@ -263,15 +263,35 @@
     <Compile Include="ViewModels\SeasonViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\css\docs.theme.min.css" />
+    <Content Include="Content\assets\css\font-awesome.min.css" />
     <Content Include="Content\assets\css\image-browser-styles.css" />
+    <Content Include="Content\assets\css\jquery-ui.min.css" />
     <Content Include="Content\assets\css\layout-style.css" />
     <Content Include="Content\assets\css\login-view.css" />
+    <Content Include="Content\assets\css\materialize.min.css" />
+    <Content Include="Content\assets\css\owl.carousel.min.css" />
+    <Content Include="Content\assets\css\owl.theme.default.min.css" />
     <Content Include="Content\assets\css\reset.css" />
+    <Content Include="Content\assets\css\simplelightbox.min.css" />
+    <Content Include="Content\assets\css\style.css" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\assets\img\68a86b5e-e398-4454-af1d-a0413a133235.jpg" />
     <Content Include="Content\assets\img\86bf61e4-9c0d-4495-99af-a515fe84dd26.jpg" />
+    <Content Include="Content\assets\img\bg.jpg" />
     <Content Include="Content\assets\img\e6ff2674-d4bd-4e73-a8c5-598016094046.jpg" />
     <Content Include="Content\assets\img\face.jpg" />
     <Content Include="Content\assets\img\LegendLogo.svg" />
+    <Content Include="Content\assets\img\lg.svg" />
+    <Content Include="Content\assets\img\user.svg" />
+    <Content Include="Content\assets\js\jquery-ui.min.js" />
+    <Content Include="Content\assets\js\jquery.min.js" />
+    <Content Include="Content\assets\js\materialize.min.js" />
+    <Content Include="Content\assets\js\owl.carousel.js" />
+    <Content Include="Content\assets\js\owl.carousel.min.js" />
+    <Content Include="Content\assets\js\script.js" />
+    <Content Include="Content\assets\js\simple-lightbox.min.js" />
+    <Content Include="Content\assets\js\xxxx.js" />
     <Content Include="Content\assets\scripts\admin-panel.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -306,6 +326,24 @@
     <Content Include="Models\LOFDB.edmx.diagram">
       <DependentUpon>LOFDB.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\assets\fonts\BPG_Arial_0.woff" />
+    <Content Include="Content\assets\fonts\BPG_Arial_Caps.woff" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\assets\fonts\FontAwesome.otf" />
+    <Content Include="Content\assets\fonts\GAGakruli-Regular_0.woff" />
+    <Content Include="Content\assets\fonts\roboto\Roboto-Bold.woff" />
+    <Content Include="Content\assets\fonts\roboto\Roboto-Bold.woff2" />
+    <Content Include="Content\assets\fonts\roboto\Roboto-Light.woff" />
+    <Content Include="Content\assets\fonts\roboto\Roboto-Light.woff2" />
+    <Content Include="Content\assets\fonts\roboto\Roboto-Medium.woff" />
+    <Content Include="Content\assets\fonts\roboto\Roboto-Medium.woff2" />
+    <Content Include="Content\assets\fonts\roboto\Roboto-Regular.woff" />
+    <Content Include="Content\assets\fonts\roboto\Roboto-Regular.woff2" />
+    <Content Include="Content\assets\fonts\roboto\Roboto-Thin.woff" />
+    <Content Include="Content\assets\fonts\roboto\Roboto-Thin.woff2" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
@@ -673,7 +711,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -722,6 +759,7 @@
     <Content Include="Views\Judge\Edit.cshtml" />
     <Content Include="Views\Judge\Delete.cshtml" />
     <Content Include="Views\Judge\Details.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

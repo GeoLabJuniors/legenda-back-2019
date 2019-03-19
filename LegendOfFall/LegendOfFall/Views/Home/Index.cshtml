@@ -1,31 +1,315 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_layoutMine.cshtml";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<main>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+    <!-- site rules start -->
+    <!-- <section class="active site-rules">
+        <div class="text">
+            <div class="header center-align">კონკურსის აღწერა და წესები</div>
+            <p class="text-body">
+                ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია მკითხველის ყურადღება მიიზიდოს და დიზაინის აღქმაში ხელი შეუშალოს. Lorem Ipsum-ის გამოყენებით ვღებულობთ იმაზე მეტ-ნაკლებად სწორი გადანაწილების ტექსტს, ვიდრე ერთიდაიგივე გამეორებადი სიტყვებია ხოლმე. შედეგად, ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი შეუძლებელია. დღეს უამრავი პერსონალური საგამომცემლო პროგრამა და ვებგვერდი იყენებს Lorem Ipsum-ს, როგორც დროებით ტექსტს წყობის შესავსებად; Lorem Ipsum-ის მოძებნისას კი საძიებო სისტემები ბევრ დაუსრულებელ გვერდს გვიჩვენებენ. წლების მანძილზე ამ ტექსტის უამრავი ვერსია გამოჩნდა, ზოგი შემთხვევით დაშვებული შეცდომის გამო, ზოგი კი — განზრახ, ხუმრობით.ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია მკითხველის ყურადღება მიიზიდოს და დიზაინის აღქმაში ხელი შეუშალოს. Lorem Ipsum-ის გამოყენებით ვღებულობთ იმაზე მეტ-ნაკლებად სწორი გადანაწილების ტექსტს, ვიდრე ერთიდაიგივე გამეორებადი სიტყვებია ხოლმე. შედეგად, ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი შეუძლებელია. დღეს უამრავი პერსონალური საგამომცემლო პროგრამა და ვებგვერდი იყენებს Lorem Ipsum-ს, როგორც დროებით ტექსტს წყობის შესავსებად; Lorem Ipsum-ის მოძებნისას კი საძიებო სისტემები ბევრ დაუსრულებელ გვერდს გვიჩვენებენ. წლების მანძილზე ამ ტექსტის უამრავი ვერსია გამოჩნდა, ზოგი შემთხვევით დაშვებული შეცდომის გამო, ზოგი კი — განზრახ, ხუმრობით.ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია მკითხველის ყურადღება მიიზიდოს და დიზაინის აღქმაში ხელი შეუშალოს. Lorem Ipsum-ის გამოყენებით ვღებულობთ იმაზე მეტ-ნაკლებად სწორი გადანაწილების ტექსტს, ვიდრე ერთიდაიგივე გამეორებადი სიტყვებია ხოლმე. შედეგად, ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი შეუძლებელია. დღეს უამრავი პერსონალური საგამომცემლო პროგრამა და ვებგვერდი იყენებს Lorem Ipsum-ს, როგორც დროებით ტექსტს წყობის შესავსებად; Lorem Ipsum-ის მოძებნისას კი საძიებო სისტემები ბევრ დაუსრულებელ გვერდს გვიჩვენებენ. წლების მანძილზე ამ ტექსტის უამრავი ვერსია გამოჩნდა, ზოგი შემთხვევით დაშვებული შეცდომის გამო, ზოგი კი — განზრახ, ხუმრობით.ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია მკითხველის ყურადღება მიიზიდოს და დიზაინის აღქმაში ხელი შეუშალოს. Lorem Ipsum-ის გამოყენებით ვღებულობთ იმაზე მეტ-ნაკლებად სწორი გადანაწილების ტექსტს, ვიდრე ერთიდაიგივე გამეორებადი სიტყვებია ხოლმე. შედეგად, ტექსტი ჩვეულებრივ ინგლისურს გავს, მისი წაითხვა კი შეუძლებელია. დღეს უამრავი პერსონალური საგამომცემლო პროგრამა და ვებგვერდი იყენებს Lorem Ipsum-ს, როგორც დროებით ტექსტს წყობის შესავსებად; Lorem Ipsum-ის მოძებნისას კი საძიებო სისტემები ბევრ დაუსრულებელ გვერდს გვიჩვენებენ. წლების მანძილზე ამ ტექსტის უამრავი ვერსია გამოჩნდა, ზოგი შემთხვევით დაშვებული შეცდომის გამო, ზოგი კი — განზრახ, ხუმრობით.
+            </p>
+            <div class="accept-and-go center-align">
+                <div class="checkbox-block">
+                    <input type="checkbox" id="2018" class="filled-in"/>
+                    <label for="2018">ვეთანხმები საიტის წესებს</label>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- site rules end -->
+    <!-- content start -->
+    <!-- legend of the fall cover start -->
+
+    <section class="image-cover" style="background-image: url(../Content/assets/img/bg.jpg)">
+        <div class="cover-inside center-align">
+            <h1>შემოდგომის ლეგენდა</h1>
+            <div class="buttons">
+                <a class="btn waves-effect waves-dark reg-competition">კონკურსზე რეგისტრაცია</a>
+                <a href="online-marathon.html" class="btn waves-effect waves-dark online-marathon">ონლაინ მარათონი</a>
+            </div>
+        </div>
+        <div class="shape-bottom"></div>
+    </section>
+
+    <!-- legend of the fall cover end -->
+    <!-- information about season start -->
+
+    <section class="container about-section">
+        <div class="row">
+            <div class="col l6 offset-l3 m8 offset-m2 s12">
+                <div class="title center-align">
+                    ინფორმაცია სეზონის შესახებ
+                </div>
+            </div>
+            <div class="col m10 offset-m1 s12">
+                <div class="center-align text">
+                    ცნობილი ფაქტია, რომ გვერდის წაკითხვად შიგთავსს შეუძლია მკითხველის ყურადღება მიიზიდოს და დიზაინის აღქმაში ხელი შეუშალოს. Lorem Ipsum-ის გამოყენებით ვღებულობთ იმაზე მეტ-ნაკლებად სწორი გადანაწილების ტექსტს, ვიდრე ერთიდაიგივე გამეორებადი სიტყვებია ხოლმე.
+                </div>
+            </div>
+        </div>
+        <div class="three-img-block row">
+            <div class="top-description">
+                <span class="truncate secondary-title">შემოდგომის ლეგენდა 2018</span>
+                <p class="text">
+                    ლორემ იპსუმ გვესმოდეს გასართობლადაო ყაჩაღობა, ნარჩენების შეზავებულ კოსტიუმში მნიშვნელობა ფუფუნების კეისრისა კინგ სტოკავ მკითხავმა გატანა ამეებს. ცენზურას შეზღუდულები გახსნილი წასწვდომოდა დაშხამული, ბალეტზეც, გვესმოდეს ფინალურ, წინსვლას, შეპყრობილი მიაბჯინა.
+                </p>
+                <span class="date">13.03.2018</span>
+                <a href="" class="right view-more">
+                    ვრცლად
+                </a>
+            </div>
+            <a href="" class="bottom-description">
+                <p>
+                    შემოდგომის ლეგენდა 2018
+                </p>
+                <span>
+                    <img src="@Url.Content("~/Content/assets/img/right-arrow.svg")" alt="right-arrow">
+                </span>
+            </a>
+            <div class="right-logo">
+                <div class="badge-logo center-align" style="background-image: url(../../Content/assets/img/badge.png);">
+                    <img src="@Url.Content("~/Content/assets/img/lg.svg")" alt="logo">
+                </div>
+            </div>
+            <div class="col m4 s12">
+                <div class="image" style="background-image: url(../../Content/assets/img/1.jpg)"></div>
+            </div>
+            <div class="col m4 s4 hide-on-small-only">
+                <div class="image" style="background-image: url(assets/img/1.png)"></div>
+            </div>
+            <div class="col m4 s4 hide-on-small-only">
+                <div class="image" style="background-image: url(assets/img/1.jpg)"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- information about season end -->
+    <!-- participants works start -->
+
+    <section class="participants-works" style="background-image: url(assets/img/bg2.png)">
+        <div class="shadow"></div>
+        <div class="shape-top"></div>
+        <div class="shape-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col l6 offset-l3 m8 offset-m2 s12">
+                    <div class="title white center-align">
+                        კონკურსის ნაშრომები
+                    </div>
+                </div>
+            </div>
+            <div class="row three-text-block">
+                <div class="col l4 m6 s12">
+                    <div class="work center-align">
+                        <div class="secondary-title center-align">
+                            მაყვალას ვნებები და ტორტი მაყვალას ვნებები და ტორტიმაყვალას ვნებები და ტორტიმაყვალას ვნებები და ტორტი
+                        </div>
+                        <p class="center-align text">
+                            დღეს უკვე Lorem Ipsum-პასაჟის უამრავი ვერსია არსებობს. მათი დიდი ნაწილი ხუმრობით არის შეცვლილი, ბევრი კი უბრალოდ სიტყვების შემთხვევითი გენერირებით დაიწერა. ინტერნეტში არსებული გენერატორები, როგორც წესი, წინასწარ განსაზღვრული ტექსტის ნაგლეჯს იმეორებენ ხოლმე, ამიტომ ეს პირველი ნამდვილი გენერატორია. იგი რთული და მართებული სტრუქტურის წინადადებების ასაწყობად 200-მდე ლათინური სიტყვისგან შემდგარ ლექსიკონს იყენებს.დღეს უკვე Lorem Ipsum-პასაჟის უამრავი ვერსია არსებობს. მათი დიდი ნაწილი ხუმრობით არის შეცვლილი, ბევრი კი უბრალოდ სიტყვების შემთხვევითი გენერირებით დაიწერა. ინტერნეტში არსებული გენერატორები, როგორც წესი, წინასწარ განსაზღვრული ტექსტის ნაგლეჯს იმეორებენ ხოლმე, ამიტომ ეს პირველი ნამდვილი გენერატორია. იგი რთული და მართებული სტრუქტურის წინადადებების ასაწყობად 200-მდე ლათინური სიტყვისგან შემდგარ ლექსიკონს იყენებს.
+                        </p>
+                        <a href="" class="view-more btn">სრულად</a>
+                        <div class="footer">
+                            <div class="author left">
+                                <div class="img left">
+                                    <img src="assets/img/1.png" alt="author">
+                                </div>
+                                <p class="left">თამუნა გელაშვილი</p>
+                            </div>
+                            <div class="date right">
+                                20.01.2018
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l4 m6 s12">
+                    <div class="work center-align middle">
+                        <div class="secondary-title center-align">
+                            მაყვალას ვნებები და ტორტი მაყვალას ვნებები და ტორტიმაყვალას ვნებები და ტორტიმაყვალას ვნებები და ტორტი
+                        </div>
+                        <p class="center-align text">
+                            დღეს უკვე Lorem Ipsum-პასაჟის უამრავი ვერსია არსებობს. მათი დიდი ნაწილი ხუმრობით არის შეცვლილი, ბევრი კი უბრალოდ სიტყვების შემთხვევითი გენერირებით დაიწერა. ინტერნეტში არსებული გენერატორები, როგორც წესი, წინასწარ განსაზღვრული ტექსტის ნაგლეჯს იმეორებენ ხოლმე, ამიტომ ეს პირველი ნამდვილი გენერატორია. იგი რთული და მართებული სტრუქტურის წინადადებების ასაწყობად 200-მდე ლათინური სიტყვისგან შემდგარ ლექსიკონს იყენებს.დღეს უკვე Lorem Ipsum-პასაჟის უამრავი ვერსია არსებობს. მათი დიდი ნაწილი ხუმრობით არის შეცვლილი, ბევრი კი უბრალოდ სიტყვების შემთხვევითი გენერირებით დაიწერა. ინტერნეტში არსებული გენერატორები, როგორც წესი, წინასწარ განსაზღვრული ტექსტის ნაგლეჯს იმეორებენ ხოლმე, ამიტომ ეს პირველი ნამდვილი გენერატორია. იგი რთული და მართებული სტრუქტურის წინადადებების ასაწყობად 200-მდე ლათინური სიტყვისგან შემდგარ ლექსიკონს იყენებს.
+                        </p>
+                        <a href="" class="view-more btn">სრულად</a>
+                        <div class="footer">
+                            <div class="author left">
+                                <div class="img left">
+                                    <img src="assets/img/1.png" alt="author">
+                                </div>
+                                <p class="left">თამუნა გელაშვილი</p>
+                            </div>
+                            <div class="date right">
+                                20.01.2018
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col l4 m4 s12 hide-on-med">
+                    <div class="work center-align">
+                        <div class="secondary-title center-align">
+                            მაყვალას ვნებები და ტორტი მაყვალას ვნებები და ტორტიმაყვალას ვნებები და ტორტიმაყვალას ვნებები და ტორტი
+                        </div>
+                        <p class="center-align text">
+                            დღეს უკვე Lorem Ipsum-პასაჟის უამრავი ვერსია არსებობს. მათი დიდი ნაწილი ხუმრობით არის შეცვლილი, ბევრი კი უბრალოდ სიტყვების შემთხვევითი გენერირებით დაიწერა. ინტერნეტში არსებული გენერატორები, როგორც წესი, წინასწარ განსაზღვრული ტექსტის ნაგლეჯს იმეორებენ ხოლმე, ამიტომ ეს პირველი ნამდვილი გენერატორია. იგი რთული და მართებული სტრუქტურის წინადადებების ასაწყობად 200-მდე ლათინური სიტყვისგან შემდგარ ლექსიკონს იყენებს.დღეს უკვე Lorem Ipsum-პასაჟის უამრავი ვერსია არსებობს. მათი დიდი ნაწილი ხუმრობით არის შეცვლილი, ბევრი კი უბრალოდ სიტყვების შემთხვევითი გენერირებით დაიწერა. ინტერნეტში არსებული გენერატორები, როგორც წესი, წინასწარ განსაზღვრული ტექსტის ნაგლეჯს იმეორებენ ხოლმე, ამიტომ ეს პირველი ნამდვილი გენერატორია. იგი რთული და მართებული სტრუქტურის წინადადებების ასაწყობად 200-მდე ლათინური სიტყვისგან შემდგარ ლექსიკონს იყენებს.
+                        </p>
+                        <a href="" class="view-more btn">სრულად</a>
+                        <div class="footer">
+                            <div class="author left">
+                                <div class="img left">
+                                    <img src="assets/img/1.png" alt="author">
+                                </div>
+                                <p class="left">თამუნა გელაშვილი</p>
+                            </div>
+                            <div class="date right">
+                                20.01.2018
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- participants works end -->
+    <!-- tabs section start -->
+
+    <section class="container slider-section">
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs center-align">
+                    <li class="tab"><a class="active" href="#participants">მონაწილეები</a></li>
+                    <li class="tab"><a href="#judge">ჟიური</a></li>
+                </ul>
+            </div>
+            <div id="participants" class="col s12">
+                <div class="owl-carousel owl-theme">
+                    <a href="" class="item">
+                        <div class="image" style="background-image: url(assets/img/1.png)">
+                            <p>
+                                <span class="title">
+                                    ნია თავართქილაძე
+                                </span>
+                            </p>
+                        </div>
+                    </a>
+                    <a href="" class="item">
+                        <div class="image" style="background-image: url(assets/img/1.png)">
+                            <p>
+                                <span class="title">
+                                    ნია თავართქილაძე
+                                </span>
+                            </p>
+                        </div>
+                    </a>
+                    <a href="" class="item">
+                        <div class="image" style="background-image: url(assets/img/1.png)">
+                            <p>
+                                <span class="title">
+                                    ნია თავართქილაძე
+                                </span>
+                            </p>
+                        </div>
+                    </a>
+                    <a href="" class="item">
+                        <div class="image" style="background-image: url(assets/img/1.png)">
+                            <p>
+                                <span class="title">
+                                    ნია თავართქილაძე
+                                </span>
+                            </p>
+                        </div>
+                    </a>
+                    <a href="" class="item">
+                        <div class="image" style="background-image: url(assets/img/1.png)">
+                            <p>
+                                <span class="title">
+                                    ნია თავართქილაძე
+                                </span>
+                            </p>
+                        </div>
+                    </a>
+                    <a href="" class="item">
+                        <div class="image" style="background-image: url(assets/img/1.png)">
+                            <p>
+                                <span class="title">
+                                    ნია თავართქილაძე
+                                </span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div id="judge" class="col s12">
+                <div class="owl-carousel owl-theme">
+                    <a href="" class="item">
+                        <div class="image" style="background-image: url(assets/img/1.png)">
+                            <p>
+                                <span class="title">
+                                    ნია თავართქილაძე
+                                </span>
+                            </p>
+                        </div>
+                    </a>
+                    <a href="" class="item">
+                        <div class="image" style="background-image: url(assets/img/1.png)">
+                            <p>
+                                <span class="title">
+                                    ნია თავართქილაძე
+                                </span>
+                            </p>
+                        </div>
+                    </a>
+                    <a href="" class="item">
+                        <div class="image" style="background-image: url(assets/img/1.png)">
+                            <p>
+                                <span class="title">
+                                    ნია თავართქილაძე
+                                </span>
+                            </p>
+                        </div>
+                    </a>
+                    <a href="" class="item">
+                        <div class="image" style="background-image: url(assets/img/1.png)">
+                            <p>
+                                <span class="title">
+                                    ნია თავართქილაძე
+                                </span>
+                            </p>
+                        </div>
+                    </a>
+                    <a href="" class="item">
+                        <div class="image" style="background-image: url(assets/img/1.png)">
+                            <p>
+                                <span class="title">
+                                    ნია თავართქილაძე
+                                </span>
+                            </p>
+                        </div>
+                    </a>
+                    <a href="" class="item">
+                        <div class="image" style="background-image: url(assets/img/1.png)">
+                            <p>
+                                <span class="title">
+                                    ნია თავართქილაძე
+                                </span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- tabs section end -->
+    <!-- content end -->
+
+</main>
+
