@@ -258,6 +258,8 @@
     <Compile Include="ViewModels\BlogEditionViewModel.cs" />
     <Compile Include="ViewModels\BlogViewModel.cs" />
     <Compile Include="ViewModels\ContactViewModel.cs" />
+    <Compile Include="ViewModels\HomePageViewModel.cs" />
+    <Compile Include="ViewModels\ImageViewModel.cs" />
     <Compile Include="ViewModels\JudgeCreationViewModel.cs" />
     <Compile Include="ViewModels\JudgeEditionViewModel.cs" />
     <Compile Include="ViewModels\SeasonViewModel.cs" />
@@ -762,6 +764,7 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ApplicationDocuments\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

@@ -16,10 +16,12 @@ namespace LegendOfFall.Models
     {
         public int Id { get; set; }
         public string NovelTitle { get; set; }
-        public string DocumentPath { get; set; }
         public int SeasonId { get; set; }
         public System.DateTime DateApplied { get; set; }
         public int ApplicantId { get; set; }
+        public string NovelContent { get; set; }
+        public string DocumentName { get; set; }
+        public string DocumentExtension { get; set; }
     
         public virtual Applicant Applicant { get; set; }
     }

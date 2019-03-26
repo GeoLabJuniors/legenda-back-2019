@@ -33,9 +33,11 @@
     <EntitySetMapping Name="Applications">
       <EntityTypeMapping TypeName="LOFModel.Application">
         <MappingFragment StoreEntitySet="Application">
+          <ScalarProperty Name="DocumentExtension" ColumnName="DocumentExtension" />
+          <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+          <ScalarProperty Name="NovelContent" ColumnName="NovelContent" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="NovelTitle" ColumnName="NovelTitle" />
-          <ScalarProperty Name="DocumentPath" ColumnName="DocumentPath" />
           <ScalarProperty Name="SeasonId" ColumnName="SeasonId" />
           <ScalarProperty Name="DateApplied" ColumnName="DateApplied" />
           <ScalarProperty Name="ApplicantId" ColumnName="ApplicantId" />
