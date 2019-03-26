@@ -1,18 +1,11 @@
-﻿    
+﻿
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_layoutMine.cshtml";
 }
 @model  LegendOfFall.ViewModels.HomePageViewModel
-    @*@{ 
-        var judges = (IEnumerable<LegendOfFall.Models.Judge>)ViewBag.Judges;
-        var applicants = (IEnumerable<LegendOfFall.Models.Applicant>)ViewBag.Applicants;
-        var images = (IEnumerable<LegendOfFall.Models.Photo>)ViewBag.Images;
-        var seasonPhotos = images.Where(x => x.SeasonId == Model.Id).ToList();
-    }*@
 
-<main>
-
+<main>    
     <!-- site rules start -->
     <!-- <section class="active site-rules">
         <div class="text">
@@ -31,8 +24,7 @@
     <!-- site rules end -->
     <!-- content start -->
     <!-- legend of the fall cover start -->
-    @Model
-
+    
     <section class="image-cover" style="background-image: url(../Content/assets/img/bg.jpg)">
         <div class="cover-inside center-align">
             <h1>შემოდგომის ლეგენდა</h1>
@@ -51,18 +43,18 @@
         <div class="row">
             <div class="col l6 offset-l3 m8 offset-m2 s12">
                 <div class="title center-align">
-                    @Model.Season.Title
+                    შემოდგომის ლეგენდა
                 </div>
             </div>
             <div class="col m10 offset-m1 s12">
                 <div class="center-align text">
-                    ამ სექციაში ჩაიწერება ზოგადი ინფორმაცია კონკურსის შესახებ რომელიც შეიძლება წაიკითხოს დაინტერესებულმა ადამიანმა                   
+                    ამ სექციაში ჩაიწერება ზოგადი ინფორმაცია კონკურსის შესახებ რომელიც შეიძლება წაიკითხოს დაინტერესებულმა ადამიანმა
                 </div>
             </div>
         </div>
         <div class="three-img-block row">
             <div class="top-description">
-                <span class="truncate secondary-title">შემოდგომის ლეგენდა 2018</span>
+                <span class="truncate secondary-title">@Model.Season.Title</span>
                 <div class="text">
                     @Html.Raw(Model.Season.Description)
                 </div>
@@ -73,7 +65,7 @@
             </div>
             <a href="" class="bottom-description">
                 <p>
-                    შემოდგომის ლეგენდა 2018
+                    @Model.Season.Title
                 </p>
                 <span>
                     <img src="@Url.Content("~/Content/assets/img/right-arrow.svg")" alt="right-arrow">
@@ -120,16 +112,16 @@
                         <p class="center-align text">
                             @Model.Applications[0].NovelContent
                         </p>
-                        <a href="" class="view-more btn">სრულად</a>
+                        <a href="" class="view-more btn">სრულად </a>
                         <div class="footer">
                             <div class="author left">
-                                <div class="img left">
-                                    <img src="@Url.Content("~Content/assets/img"+Model.Applications[0].Applicant.Photos.FirstOrDefault().Name+Model.Applications[0].Applicant.Photos.FirstOrDefault().Extension)" alt="author">
+                                <div class="img left">                                    
+                                    <img src="@Url.Content("~/Content/assets/img/face.jpg")" alt="author">
                                 </div>
-                                <p class="left">თამუნა გელაშვილი</p>
+                                <p class="left">@Model.Applications[0].Applicant.FirstName @Model.Applications[0].Applicant.LastName</p>
                             </div>
                             <div class="date right">
-                                20.01.2018
+                                @Model.Applications[0].DateApplied.Date
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -147,12 +139,12 @@
                         <div class="footer">
                             <div class="author left">
                                 <div class="img left">
-                                    <img src="assets/img/1.png" alt="author">
+                                    <img src="@Url.Content("~/Content/assets/img/face.jpg")" alt="author">
                                 </div>
-                                <p class="left">თამუნა გელაშვილი</p>
+                                <p class="left"><p class="left">@Model.Applications[1].Applicant.FirstName @Model.Applications[1].Applicant.LastName</p></p>
                             </div>
                             <div class="date right">
-                                20.01.2018
+                                @Model.Applications[1].DateApplied.Date
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -170,12 +162,12 @@
                         <div class="footer">
                             <div class="author left">
                                 <div class="img left">
-                                    <img src="assets/img/1.png" alt="author">
+                                    <img src="@Url.Content("~/Content/assets/img/face.jpg")" alt="author">
                                 </div>
-                                <p class="left">თამუნა გელაშვილი</p>
+                                <p class="left"><p class="left"><p class="left">@Model.Applications[2].Applicant.FirstName @Model.Applications[2].Applicant.LastName</p></p></p>
                             </div>
                             <div class="date right">
-                                20.01.2018
+                                @Model.Applications[2].DateApplied.Date
                             </div>
                             <div class="clear"></div>
                         </div>
