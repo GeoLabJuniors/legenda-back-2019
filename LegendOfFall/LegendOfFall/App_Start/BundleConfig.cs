@@ -18,6 +18,15 @@ namespace LegendOfFall
                         "~/Content/assets/css/layout-style.css"                        
                 ));
 
+            bundles.Add(new StyleBundle("~/bundles/wrappedstyles").Include(
+                        "~/Content/assets/css/materialize.min.css",
+                        "~/Content/assets/css/font-awesome.min.css",
+                        "~/Content/assets/css/owl.carousel.min.css",
+                        "~/Content/assets/css/owl.theme.default.min.css",
+                        "~/Content/assets/css/simplelightbox.min.css",
+                        "~/Content/assets/css/style.css"
+                ));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 

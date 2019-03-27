@@ -121,7 +121,7 @@
                                 <p class="left">@Model.Applications[0].Applicant.FirstName @Model.Applications[0].Applicant.LastName</p>
                             </div>
                             <div class="date right">
-                                @Model.Applications[0].DateApplied.Date
+                                @Model.Applications[0].DateApplied.Day.@Model.Applications[0].DateApplied.Month.@Model.Applications[0].DateApplied.Year
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -144,7 +144,7 @@
                                 <p class="left"><p class="left">@Model.Applications[1].Applicant.FirstName @Model.Applications[1].Applicant.LastName</p></p>
                             </div>
                             <div class="date right">
-                                @Model.Applications[1].DateApplied.Date
+                                @Model.Applications[1].DateApplied.Day.@Model.Applications[1].DateApplied.Month.@Model.Applications[1].DateApplied.Year
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -167,7 +167,7 @@
                                 <p class="left"><p class="left"><p class="left">@Model.Applications[2].Applicant.FirstName @Model.Applications[2].Applicant.LastName</p></p></p>
                             </div>
                             <div class="date right">
-                                @Model.Applications[2].DateApplied.Date
+                                @Model.Applications[2].DateApplied.Day.@Model.Applications[2].DateApplied.Month.@Model.Applications[2].DateApplied.Year
                             </div>
                             <div class="clear"></div>
                         </div>
@@ -191,118 +191,150 @@
             </div>
             <div id="participants" class="col s12">
                 <div class="owl-carousel owl-theme">
-                    <a href="" class="item">
-                        <div class="image" style="background-image: url(assets/img/1.png)">
-                            <p>
-                                <span class="title">
-                                    ნია თავართქილაძე
-                                </span>
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="item">
-                        <div class="image" style="background-image: url(assets/img/1.png)">
-                            <p>
-                                <span class="title">
-                                    ნია თავართქილაძე
-                                </span>
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="item">
-                        <div class="image" style="background-image: url(assets/img/1.png)">
-                            <p>
-                                <span class="title">
-                                    ნია თავართქილაძე
-                                </span>
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="item">
-                        <div class="image" style="background-image: url(assets/img/1.png)">
-                            <p>
-                                <span class="title">
-                                    ნია თავართქილაძე
-                                </span>
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="item">
-                        <div class="image" style="background-image: url(assets/img/1.png)">
-                            <p>
-                                <span class="title">
-                                    ნია თავართქილაძე
-                                </span>
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="item">
-                        <div class="image" style="background-image: url(assets/img/1.png)">
-                            <p>
-                                <span class="title">
-                                    ნია თავართქილაძე
-                                </span>
-                            </p>
-                        </div>
-                    </a>
+
+                    @foreach (var item in Model.Applicants)
+                    {
+                        <a href="" class="item">
+                            <div class="image" style="background-image: url(../../Content/assets/img/face.jpg )">
+                                <p>
+                                    <span class="title">
+                                        @item.FirstName
+                                        <br/>
+                                        @item.LastName
+                                    </span>
+                                </p>
+                            </div>
+                        </a>
+                    }
+
+                    @*<a href="" class="item">
+            <div class="image" style="background-image: url(assets/img/1.png)">
+                <p>
+                    <span class="title">
+                        ნია თავართქილაძე
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="" class="item">
+            <div class="image" style="background-image: url(assets/img/1.png)">
+                <p>
+                    <span class="title">
+                        ნია თავართქილაძე
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="" class="item">
+            <div class="image" style="background-image: url(assets/img/1.png)">
+                <p>
+                    <span class="title">
+                        ნია თავართქილაძე
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="" class="item">
+            <div class="image" style="background-image: url(assets/img/1.png)">
+                <p>
+                    <span class="title">
+                        ნია თავართქილაძე
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="" class="item">
+            <div class="image" style="background-image: url(assets/img/1.png)">
+                <p>
+                    <span class="title">
+                        ნია თავართქილაძე
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="" class="item">
+            <div class="image" style="background-image: url(assets/img/1.png)">
+                <p>
+                    <span class="title">
+                        ნია თავართქილაძე
+                    </span>
+                </p>
+            </div>
+        </a>*@
                 </div>
             </div>
             <div id="judge" class="col s12">
-                <div class="owl-carousel owl-theme">
-                    <a href="" class="item">
-                        <div class="image" style="background-image: url(assets/img/1.png)">
-                            <p>
-                                <span class="title">
-                                    ნია თავართქილაძე
-                                </span>
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="item">
-                        <div class="image" style="background-image: url(assets/img/1.png)">
-                            <p>
-                                <span class="title">
-                                    ნია თავართქილაძე
-                                </span>
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="item">
-                        <div class="image" style="background-image: url(assets/img/1.png)">
-                            <p>
-                                <span class="title">
-                                    ნია თავართქილაძე
-                                </span>
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="item">
-                        <div class="image" style="background-image: url(assets/img/1.png)">
-                            <p>
-                                <span class="title">
-                                    ნია თავართქილაძე
-                                </span>
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="item">
-                        <div class="image" style="background-image: url(assets/img/1.png)">
-                            <p>
-                                <span class="title">
-                                    ნია თავართქილაძე
-                                </span>
-                            </p>
-                        </div>
-                    </a>
-                    <a href="" class="item">
-                        <div class="image" style="background-image: url(assets/img/1.png)">
-                            <p>
-                                <span class="title">
-                                    ნია თავართქილაძე
-                                </span>
-                            </p>
-                        </div>
-                    </a>
+                <div class="owl-carousel owl-theme">                    
+
+                    @foreach (var item in Model.Judges)
+                    {
+                        <a href="" class="item">
+                            <div class="image" style="background-image: url(../../Content/assets/img/@Model.Images.FirstOrDefault(x=>x.JudgeId==item.Id).Name@Model.Images.FirstOrDefault(x=>x.JudgeId==item.Id).Extension)">
+                                <p>
+                                    <span class="title">
+                                        @item.FirstName
+                                        <br/>
+                                        @item.LastName
+                                    </span>
+                                </p>
+                            </div>
+                        </a>
+                    }
+
+                    @*<a href="" class="item">
+            <div class="image" style="background-image: url(assets/img/1.png)">
+                <p>
+                    <span class="title">
+                        ნია თავართქილაძე
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="" class="item">
+            <div class="image" style="background-image: url(assets/img/1.png)">
+                <p>
+                    <span class="title">
+                        ნია თავართქილაძე
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="" class="item">
+            <div class="image" style="background-image: url(assets/img/1.png)">
+                <p>
+                    <span class="title">
+                        ნია თავართქილაძე
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="" class="item">
+            <div class="image" style="background-image: url(assets/img/1.png)">
+                <p>
+                    <span class="title">
+                        ნია თავართქილაძე
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="" class="item">
+            <div class="image" style="background-image: url(assets/img/1.png)">
+                <p>
+                    <span class="title">
+                        ნია თავართქილაძე
+                    </span>
+                </p>
+            </div>
+        </a>
+        <a href="" class="item">
+            <div class="image" style="background-image: url(assets/img/1.png)">
+                <p>
+                    <span class="title">
+                        ნია თავართქილაძე
+                    </span>
+                </p>
+            </div>
+        </a>*@
                 </div>
             </div>
         </div>
