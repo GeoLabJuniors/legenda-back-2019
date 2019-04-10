@@ -325,3 +325,6 @@ C:\Users\Dimitri\Desktop\Geolab\legenda-back-2019\LegendOfFall\LegendOfFall\obj\
 C:\Users\Dimitri\Desktop\Geolab\legenda-back-2019\LegendOfFall\LegendOfFall\obj\Debug\LegendOfFall.dll
 C:\Users\Dimitri\Desktop\Geolab\legenda-back-2019\LegendOfFall\LegendOfFall\obj\Debug\LegendOfFall.pdb
 C:\Users\Dimitri\Desktop\Geolab\legenda-back-2019\LegendOfFall\LegendOfFall\obj\Debug\LegendOfFall.csprojAssemblyReference.cache
+C:\Users\Dimitri\Desktop\Geolab\legenda-back-2019\LegendOfFall\LegendOfFall\bin\Autofac.dll
+C:\Users\Dimitri\Desktop\Geolab\legenda-back-2019\LegendOfFall\LegendOfFall\bin\Autofac.pdb
+C:\Users\Dimitri\Desktop\Geolab\legenda-back-2019\LegendOfFall\LegendOfFall\bin\Autofac.xml
